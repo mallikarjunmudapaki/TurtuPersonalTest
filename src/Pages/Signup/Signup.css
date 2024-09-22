@@ -1,0 +1,111 @@
+/* Container for form and image */
+.signup-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+  }
+  
+  /* Form container */
+  .signup-container {
+    /*background-color: rgba(255, 255, 255, 0.9); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 12px;
+    /*box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);*/
+    margin: auto;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Image container 
+  .signup-image {
+    width: 50%;
+    height: 100%;
+    display: none;
+    background-image: url('');
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px 0 0 12px;
+  }
+  
+  /* Form title */
+  .signup-title {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  /* Form styling */
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .signup-input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+  }
+  
+  .signup-button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .signup-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .signup-text {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; /* Adjust spacing */
+    text-decoration: none;
+    color: black;
+    text-align: center;
+  }
+  /* Responsive design */
+  @media (max-width: 1024px) {
+    .signup-wrapper {
+      flex-direction: column;
+    }
+  
+    .signup-image {
+      display: none;
+    }
+  
+    .signup-container {
+      width: 80%;
+    }
+  }
+  
+  @media (min-width: 1025px) {
+    .signup-image {
+      display: block;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .signup-container {
+      width: 95%;
+    }
+  }
+  

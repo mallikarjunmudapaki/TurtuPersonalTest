@@ -1,0 +1,24 @@
+a{
+    text-decoration: none;
+}
+.copywright-text{
+    margin-left: 150px;
+}
+.footer{
+    background-color: #02101d;
+    margin-top: 0px;
+}
+@media(max-width: 480px){
+    .copywright-text{
+        margin-left: -2px;
+        padding-left: 12px;
+    }
+    .footer{
+        margin-top: 0px;
+    }
+    .footer-about{
+        padding-top: 10px;
+    }
+
+
+}

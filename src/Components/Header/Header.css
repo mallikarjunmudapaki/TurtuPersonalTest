@@ -1,0 +1,167 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Nunito", sans-serif;
+}
+
+body {
+    background: white;
+}
+img {
+    width: 60px;
+    height: 60px;
+    padding: 2px;
+    margin-left: 10px;
+}*/
+.navbar{
+    background-color: #02101d;
+    
+    }
+    .navigation{
+        color:rgb(228, 225, 225);
+    }
+    .nav-link {
+        font-size: 18px;
+        text-decoration: none;
+        text-decoration-line: none;
+        
+    }
+    
+    .navbar-brand {
+        padding-left: 20px;
+        color: rgb(228, 225, 225);
+    }
+    
+    .navbar {
+        padding: 10px 20px;
+    }
+    
+    .navbar-toggler {
+        border: none;
+    }
+    
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%2880,80,80,0.7%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+    /* Header.css */
+  
+  .profile-icon {
+    color: #007bff; /* Adjust the icon color */
+    cursor: pointer;
+  }
+  
+  .dropdown-menu {
+    right: 0; /* Align dropdown menu to the right */
+  }
+  /* Header.css */
+.disabled-link {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  /* Header.css */
+.alert {
+    margin-top: 60px; /* Adjust this value if your navbar height is different */
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1050; /* Ensure the alert is on top of other elements */
+  }
+  .nav-item > button{
+    color: rgb(228, 225, 225);
+    
+  }
+  .nav-item > button:hover{
+    color: rgb(228, 225, 225);
+
+  }
+    @media(max-width: 480px){
+        .navbar{
+            width: 100%;
+        }
+        #toggler-button{
+            background-color:white ;
+            border: none;
+        }
+        #toggler-button button:hover{
+            border: none;
+    
+        }
+    .navbar-logo-toggle-icon{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;
+        background: none;
+    }
+    .navbar-brand{
+        margin-left: -20px;
+    }
+    
+    .navbar-toggler{
+        margin-left: 190px;
+        border: none;
+    }
+    button:hover{
+        background-color: none;
+        border: none;
+    }
+    .navbar-collapse{
+        border: none;
+    }
+    }
+    @media(max-width: 900px){
+        .navbar{
+            width: 100%;
+        }
+    .navbar-logo-toggle-icon{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-between;
+        background-color: none;
+    }
+    .navbar-brand{
+        margin-left: -20px;
+    }
+    }
+    /*@media (max-width: 992px) {
+        .nav-link {
+            font-size: 18px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .navbar-brand {
+            font-size: 24px;
+        }
+    
+        .nav-link {
+            font-size: 16px;
+            text-align: center;
+            padding: 10px 0;
+        }
+    
+        .navbar-nav {
+            width: 100%;
+            text-align: center;
+        }
+    
+        .navbar-collapse {
+            background: white;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .navbar-brand {
+            font-size: 20px;
+        }
+    
+        .nav-link {
+            font-size: 14px;
+            padding: 8px 0;
+        }
+    }
+    */
