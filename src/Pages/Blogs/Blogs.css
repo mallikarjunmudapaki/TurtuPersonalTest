@@ -83,7 +83,16 @@
     border-color: rgb(254, 199, 47);
     border-radius: 9px;
   }
-  
+  .card-body h3{
+    font-size: 24px;
+  }
+  .card-body p{
+    font-size: 14px;
+    text-align: center;
+  }
+  .blog-btn{
+    text-align: center;
+  }
   @media (max-width: 480px) {
     .blogs {
         padding: 20px;

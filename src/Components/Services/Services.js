@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import CourierServicesImg from '../../Images/Courier_Delivery.png';
 import FoodDeliveryImg from '../../Images/Food_Delivery.png';
-import CakeDeliveryImage from '../../Images/Cake_delivery.png';
-import GiftDeliveryImage from '../../Images/Frame 4.png';
-import PickanddropImage from '../../Images/Document _delivery.png';
+import CakeDeliveryImage from '../../Images/Cake_Delivery.png';
+import GiftDeliveryImage from '../../Images/Gift Delivery.png';
+import PickanddropImage from '../../Images/Pick and Drop.png';
 import MedicineDeliveryImage from '../../Images/Medicine_Delivery.png';
 
 const services = [
@@ -14,7 +14,7 @@ const services = [
     heading: 'Courier Services',
     text: 'Have you left or forgotten anything at home / office / anywhere? Get it picked and dropped at your doorstep.',
     whatsappNumber: '917975443090',
-    whatsappMessage: 'I have a courier to be delivered.',
+    whatsappMessage: 'Hi! I have a package that needs to be picked up and delivered. Can you help me with the courier service details?',
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const services = [
     heading: 'Food Delivery',
     text: 'Order your favorite meals and have them delivered to your doorstep.',
     whatsappNumber: '917975443090',
-    whatsappMessage: 'I want to order food delivery.',
+    whatsappMessage: 'Hello! I’d like to order some food for delivery. Could you please guide me on how to proceed?',
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const services = [
     heading: 'Pick and Drop',
     text: 'Need something picked up and dropped off? We can help!',
     whatsappNumber: '917975443090',
-    whatsappMessage: 'I need pick and drop service.',
+    whatsappMessage: 'Hi there! I need something picked up from one location and dropped off at another. Could you please assist with this?',
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ const services = [
     heading: 'Cake Delivery',
     text: 'Order delicious cakes for any occasion.',
     whatsappNumber: '917975443090',
-    whatsappMessage: 'I want to order a cake.',
+    whatsappMessage: 'Hi! I want to order a cake for delivery. Could you please share the available options?',
   },
   {
     id: 5,
@@ -46,7 +46,7 @@ const services = [
     heading: 'Gifts and Flowers',
     text: 'Send beautiful gifts and flowers to your loved ones.',
     whatsappNumber: '917975443090',
-    whatsappMessage: 'I want to send gifts and flowers.',
+    whatsappMessage: 'Hello! I’d like to send some gifts and flowers to a loved one. Can you help me with the choices?',
   },
   {
     id: 6,
@@ -54,7 +54,7 @@ const services = [
     heading: 'Medicine Delivery',
     text: 'Get your medicines delivered at your convenience.',
     whatsappNumber: '917975443090',
-    whatsappMessage: 'I need medicine delivery.',
+    whatsappMessage: 'Hi! I need some medicines delivered to my location. Could you please help me with the process?',
   },
 ];
 

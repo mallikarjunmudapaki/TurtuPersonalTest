@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
-import './Contact.css'; // Import your CSS file for styling
+import {jwtDecode} from 'jwt-decode'; // Corrected import, ensure you install this using `npm install jwt-decode`
+import './Contact.css'; // Your CSS file for styling
 
 export default function Contact() {
   const [formValues, setFormValues] = useState({
@@ -11,7 +12,7 @@ export default function Contact() {
   });
   const [formErrors, setFormErrors] = useState({});
   const [isSuccess, setIsSuccess] = useState(false);
-  const [message, setMessage] = useState(''); // To show messages
+  const [message, setMessage] = useState(''); // Message state for showing feedback
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,44 +26,64 @@ export default function Contact() {
     const errors = validate(formValues);
     setFormErrors(errors);
 
-    // If no validation errors, submit the form
+    // If no validation errors, proceed to verify token and email
     if (Object.keys(errors).length === 0) {
       try {
         // Retrieve the JWT token from localStorage
         const token = localStorage.getItem('authToken');
+        if (!token) {
+          setMessage('Please log in to submit the form.');
+          return;
+        }
 
-        // Send the form data with Authorization header
-        await axios.post(
-          'http://13.235.115.160:5000/api/contact',
-          formValues,
+        // Decode the token to get the user's email
+        const decodedToken = jwtDecode(token);
+        const email = decodedToken.email; // Ensure the token contains the email field
+        
+        console.log('Decoded email:', email); // Debugging statement
+
+        // Verify the email with the backend
+        const verifyResponse = await axios.post(
+          'http://13.235.115.160:5000/api/verify_email', // Endpoint for verifying if the email exists in the DB
+          { email },
           {
             headers: {
               'Content-Type': 'application/json',
-              Authorization: `Bearer ${token}`, // Correctly format the Bearer token
             },
           }
         );
 
-        // Clear the form and show success message
-        setFormValues({ username: '', email: '', phone_number: '', queries: '' });
-        setIsSuccess(true);
-        setMessage('Your message has been sent! A confirmation email has been sent to you.');
-        setTimeout(() => setIsSuccess(false), 5000); // Hide success message after 5 seconds
+        // Check if the email exists in the database
+        if (verifyResponse.data.status === 'success' && verifyResponse.data.isVerified) {
+          // Email exists; proceed with form submission
+          await axios.post(
+            'http://13.235.115.160:5000/api/contact',
+            formValues,
+            {
+              headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`, // Include the JWT token for submission
+              },
+            }
+          );
+
+          // Clear the form and show success message
+          setFormValues({ username: '', email: '', phone_number: '', queries: '' });
+          setIsSuccess(true);
+          setMessage('Your message has been sent! A confirmation email has been sent to you.');
+          setTimeout(() => setIsSuccess(false), 5000); // Hide success message after 5 seconds
+        } else {
+          // If the email is not verified or doesn't exist in the DB
+          setMessage('Please log in to submit the form.');
+        }
       } catch (error) {
         // Handle errors more effectively
-        console.error('Error submitting the form:', error);
+        console.error('Error during verification or form submission:', error);
         if (error.response) {
-          // The request was made, and the server responded with a status code
-          console.error('Error response data:', error.response.data);
-          console.error('Error response status:', error.response.status);
-          setMessage(`Error: ${error.response.data.message || 'Failed to submit the form.'}`);
+          setMessage(`Error: ${error.response.data.message || 'Failed to verify or submit the form.'}`);
         } else if (error.request) {
-          // The request was made, but no response was received
-          console.error('Error request:', error.request);
           setMessage('No response from the server. Please try again later.');
         } else {
-          // Something happened in setting up the request
-          console.error('Error message:', error.message);
           setMessage('An error occurred during submission.');
         }
       }

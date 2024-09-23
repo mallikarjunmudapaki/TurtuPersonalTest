@@ -50,7 +50,9 @@ export default function BlogsDetailsPage() {
                                         <h3 className="text-center">{blog.title}</h3>
                                         <hr className="mx-auto w-75" />
                                         <p>{blog.description}</p>
+                                        <div className="blog-btn">
                                         <Link to={`/blog/${blog.path}`}>Explore More</Link>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -63,7 +63,7 @@ export default function Header() {
                     to="/Contact"
                     smooth
                     className="navigation"
-                    onClick={(e) => handleRestrictedClick(e, 'Contact')}
+                    //onClick={(e) => handleRestrictedClick(e, 'Contact')}
                   >
                     Contact
                   </Link>
