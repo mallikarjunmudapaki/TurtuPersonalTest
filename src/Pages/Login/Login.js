@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom'; // Import Link for navigation
 import './Login.css'; // Separate CSS file for styling
 
 const Login = () => {
@@ -39,88 +40,66 @@ const Login = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-    // Handle form submission
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-  
-      if (!validateForm()) {
-        return;
+  const verifyToken = async () => {
+    const token = localStorage.getItem('authToken'); // Fetch token from local storage
+    if (!token) {
+      console.error('No token found!');
+      return;
+    }
+    try {
+      const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/verify`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      if (response.status === 200) {
+        console.log('Token is valid!', response.data);
+        // Proceed to navigate to the home or dashboard page
       }
-  
-      try {
-        // Send data to backend API
-        const response = await axios.post(
-          'http://13.235.115.160:5000/api/login', // Replace with your backend URL
-          formData,
-          {
-            headers: {
-              'Content-Type': 'application/json',
-            },
-          }
-        );
-  
-        if (response.status === 200) {
-          const { token } = response.data.data; // Extract token from response
-          // Store the token in localStorage
-          localStorage.setItem('authToken', token);
-          setSuccessMessage('Login successful!');
-          // Redirect to home or dashboard
-          window.location.href = '/'; // Change this URL to your home/dashboard page
-        }
-      } catch (error) {
-        if (error.response) {
-          if (error.response.status === 403) {
-            setErrors({ submit: 'Email not verified. Please check your email.' });
-          } else if (error.response.status === 401) {
-            setErrors({ submit: 'Invalid email or password. Please try again.' });
-          } else {
-            setErrors({ submit: 'An unexpected error occurred. Please try again.' });
-          }
+    } catch (error) {
+      console.error('Token verification failed:', error.response?.data?.message || error.message);
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+
+    try {
+      const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/login`, formData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      if (response.status === 200) {
+        const { token } = response.data.data;
+        localStorage.setItem('authToken', token);
+        setSuccessMessage('Login successful!');
+
+        // Verify the token
+        await verifyToken(token);
+
+        window.location.href = '/'; // Redirect after successful verification
+      }
+    } catch (error) {
+      if (error.response) {
+        if (error.response.status === 403) {
+          setErrors({ submit: 'Email not verified. Please check your email.' });
+        } else if (error.response.status === 401) {
+          setErrors({ submit: 'Invalid email or password. Please try again.' });
         } else {
-          setErrors({ submit: 'Error connecting to the server. Please try again later.' });
+          setErrors({ submit: 'An unexpected error occurred. Please try again.' });
         }
+      } else {
+        setErrors({ submit: 'Error connecting to the server. Please try again later.' });
       }
-    };
-  // // Handle form submission
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   if (!validateForm()) {
-  //     return;
-  //   }
-
-  //   try {
-  //     // Send data to backend API
-  //     const response = await axios.post(
-  //       'http://13.235.115.160:5000/api/login', // Replace with your backend URL
-  //       formData,
-  //       {
-  //         headers: {
-  //           'Content-Type': 'application/json',
-  //         },
-  //       }
-  //     );
-
-  //     if (response.status === 200) {
-  //       const { data } = response; // Accessing data returned from the backend
-  //       console.log('Response Data:', data); // Debug: Verify the structure
-  //       const { token } = data.data; // Assuming the backend returns a token in the data object
-
-  //       if (token) {
-  //         // Store the token in localStorage for authentication
-  //         localStorage.setItem('authToken', token);
-  //         setSuccessMessage('Login successful!');
-  //         // Redirect to home or dashboard
-  //         window.location.href = '/'; // Change this URL to your home/dashboard page
-  //       } else {
-  //         setErrors({ submit: 'Failed to retrieve token. Please try again.' });
-  //       }
-  //     }
-  //   } catch (error) {
-  //     console.error('Error during login:', error.response || error.message);
-  //     setErrors({ submit: 'Invalid email or password. Please try again.' });
-  //   }
-  // };
+    }
+  };
 
   return (
     <section className="login-section">
@@ -156,13 +135,13 @@ const Login = () => {
           {successMessage && <p className="success-message">{successMessage}</p>}
         </form>
         <div className="login-links">
-          <p className="forgot-password" onClick={() => alert('Forgot password clicked!')}>
+          <Link to="/forgot-password" className="forgot-password">
             Forgot Password?
-          </p>
+          </Link>
           <p>
             Don't have an account?{' '}
             <span className="signup-link" onClick={() => (window.location.href = '/signup')}>
-              Sign Up
+              SignUp
             </span>
           </p>
         </div>

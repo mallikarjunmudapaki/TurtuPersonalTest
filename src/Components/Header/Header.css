@@ -62,9 +62,8 @@ img {
     opacity: 0.5;
     cursor: not-allowed;
   }
-  /* Header.css */
 .alert {
-    margin-top: 60px; /* Adjust this value if your navbar height is different */
+    margin-top: 60px; 
     position: fixed;
     top: 0;
     left: 50%;
@@ -77,8 +76,80 @@ img {
   }
   .nav-item > button:hover{
     color: rgb(228, 225, 225);
-
   }
+  /*modal*/
+  .modal-body {
+    padding: 2rem;
+  }
+  
+  .modal-body h4 {
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .modal-body p,
+  .modal-body input {
+    margin-bottom: 1rem;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+  }
+  
+  .modal-dialog-centered {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .profile-icon{
+    color: rgb(228, 225, 225);
+  }
+  /* Custom size for login modal */
+.login-modal .modal-dialog.modal-sm {
+    max-width: 400px; 
+}
+.login-modal .modal-content {
+    height: 560px; /* Adjust modal height */
+    margin: auto;  /* Center the modal vertically */
+    display: flex;
+    justify-content: center;
+    padding-top: 0px;
+}
+/* Ensure proper padding and alignment */
+.login-modal .modal-body {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    height: 100%;             
+    flex-direction: column;    
+    justify-content: flex-start;
+    
+}
+
+/* Close button styling */
+.login-modal .modal-header {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    border-bottom: none;
+    margin-top: 40px;
+}
+
+.login-modal .btn-close {
+    font-size: 1 rem;
+    color: #333; 
+    border: none;
+    cursor: pointer;
+    margin-left: 330px;
+}
+
     @media(max-width: 480px){
         .navbar{
             width: 100%;
@@ -165,3 +236,6 @@ img {
         }
     }
     */
+
+
+    

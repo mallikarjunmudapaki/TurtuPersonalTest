@@ -13,21 +13,17 @@ const Career = () => {
 
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState('');
+  const [token, setToken] = useState(null);
 
-  const [token, setToken]=useState(null);
-   useEffect(()=>{
-    const savedToken=localStorage.getItem('token');
-    if(savedToken){
-      setToken(savedToken);
-    }
-   }, []);
 
+  // Handle input change
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     setFormData({ ...formData, [name]: files ? files[0] : value });
     setErrors({ ...errors, [name]: '' }); // Clear error on input change
   };
 
+  // Form validation
   const validateForm = () => {
     const newErrors = {};
 
@@ -57,12 +53,22 @@ const Career = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+  useEffect(() => {
+    const savedToken = localStorage.getItem('authToken');
+    console.log('Token from localStorage:', savedToken);  // Debugging token fetched from localStorage
+    if (savedToken) {
+      setToken(savedToken);
+    }
+  }, []);
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+    
     if (!validateForm()) {
       return;
     }
+  
+    console.log('Token before submitting form:', token);  // Debugging token before submission
   
     const formDataToSubmit = new FormData();
     formDataToSubmit.append('email', formData.email);
@@ -70,65 +76,78 @@ const Career = () => {
     formDataToSubmit.append('profile', formData.profile);
     formDataToSubmit.append('resume', formData.resume_filename);
   
-    // Retrieve the token from local storage
-    //const token = localStorage.getItem('token');
-  
     try {
-      const response = await axios.post('http://13.235.115.160:5000/api/career', formDataToSubmit, {
+      const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/career`, formDataToSubmit, {
         headers: {
           'Content-Type': 'multipart/form-data',
-          'Authorization': `Bearer ${token}`, // Add the token here
+          'Authorization': `Bearer ${token}` // Attach the token here
         },
       });
   
+      console.log('Response from backend:', response);  // Debugging the response
+  
       if (response.status === 201) {
+        const { user_data } = response.data.data;
+        console.log('Decoded user data:', user_data);  // Check user data from the response
+  
         setSuccessMessage('Application submitted successfully!');
         setFormData({ email: '', phone_number: '', profile: '', resume_filename: null });
-  
-        // Clear success message after a delay
-        // setTimeout(() => {
-        //   setSuccessMessage('');
-        // }, 3000);
+        setErrors({});
+        setTimeout(() => setSuccessMessage(''), 3000);
       }
     } catch (error) {
-      console.error('Error submitting the form:', error);
-      setErrors({ ...errors, form: 'Failed to submit the application. Please try again.' });
+      console.error('Error response:', error);  // Debugging error response
+      if (error.response && error.response.data) {
+        setErrors({ ...errors, apiError: error.response.data.message });
+      } else {
+        console.error('Unknown error occurred:', error);
+      }
     }
   };
-  
+  // // Handle form submission
   // const handleSubmit = async (e) => {
   //   e.preventDefault();
 
-  //   if (!validateForm()) {
+  //   if (!validateForm()) return;
+
+  //   if (!token) {
+  //     setErrors({ form: 'You must be logged in to submit the form.' });
   //     return;
   //   }
 
-  //   const formDataToSubmit = new FormData();
-  //   formDataToSubmit.append('email', formData.email);
-  //   formDataToSubmit.append('phone_number', formData.phone_number);
-  //   formDataToSubmit.append('profile', formData.profile);
-  //   formDataToSubmit.append('resume', formData.resume_filename);
-
   //   try {
-  //     const response = await axios.post('http://13.235.115.160:5000/api/career', formDataToSubmit, {
+  //     // Create form data to send to the backend
+  //     const formDataToSend = new FormData();
+  //     formDataToSend.append('email', formData.email);
+  //     formDataToSend.append('phone_number', formData.phone_number);
+  //     formDataToSend.append('profile', formData.profile);
+  //     formDataToSend.append('resume_filename', formData.resume_filename);
+
+  //     // Make an API call to submit the form with the token
+  //     const response = await axios.post('http://13.235.115.160:5000/api/career', formDataToSend, {
   //       headers: {
+  //         Authorization: `Bearer ${token}`, // Attach token in the Authorization header
   //         'Content-Type': 'multipart/form-data',
-          
   //       },
   //     });
 
-  //     if (response.status === 201) {
-  //       setSuccessMessage('Application submitted successfully!');
-  //       setFormData({ email: '', phone_number: '', profile: '', resume_filename: null });
-
-  //       // Clear success message after a delay
-  //       setTimeout(() => {
-  //         setSuccessMessage('');
-  //       }, 3000);
-  //     }
+  //     // Handle success response
+  //     setSuccessMessage(response.data.message);
+  //     setFormData({
+  //       email: '',
+  //       phone_number: '',
+  //       profile: '',
+  //       resume_filename: null,
+  //     });
   //   } catch (error) {
-  //     console.error('Error submitting the form:', error);
-  //     setErrors({ ...errors, form: 'Failed to submit the application. Please try again.' });
+  //     // Handle error response
+  //     if (error.response && error.response.status === 401) {
+  //       setErrors({ form: 'Unauthorized access. Please log in again.' });
+  //       // Optionally, redirect the user to the login page
+  //       // window.location.href = '/login';
+  //     } else {
+  //       setErrors({ form: 'An error occurred while submitting the form. Please try again.' });
+  //     }
   //   }
   // };
 
@@ -136,7 +155,7 @@ const Career = () => {
     <>
       <Header />
       <section className="career-section">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='career-form'>
           <h2>Career Application Form</h2>
           <div>
             <label>Email:</label>
@@ -165,7 +184,7 @@ const Career = () => {
             <input type="file" name="resume_filename" accept=".pdf,.doc,.docx" onChange={handleChange} />
             {errors.resume_filename && <p className="error-message">{errors.resume_filename}</p>}
           </div>
-          <button type="submit">Submit</button>
+          <button type="submit" className='career-btn'>Submit</button>
           {successMessage && <p className="success-message">{successMessage}</p>}
           {errors.form && <p className="error-message">{errors.form}</p>}
         </form>
@@ -175,6 +194,5 @@ const Career = () => {
 };
 
 export default Career;
-
 
 

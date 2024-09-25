@@ -48,8 +48,8 @@
   }
   
   .service-btn:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
+    background-color: #041f38;
+    border-color: #041f38;
   }
   .header-service{
     margin-top: 50px;
@@ -76,6 +76,7 @@
     .service-img {
       width: 100%;
       border-radius: 10px 10px 0 0;
+      padding: 10px;
     }
   
     .service-btn {

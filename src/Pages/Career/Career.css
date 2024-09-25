@@ -1,89 +1,198 @@
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #343a40;
+  font-size: 28px;
+}
+
+.career-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ensures it takes full viewport height */
+  background-color: #f8f9fa; /* Light background color */
+}
+
+.career-form {
+  width: 100%;
+  max-width: 500px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  margin: 20px;
+}
+
+.input-field {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #495057;
+  font-size: 14px;
+}
+
+input[type="email"],
+input[type="text"],
+select,
+input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out;
+}
+
+input[type="email"]:focus,
+input[type="text"]:focus,
+select:focus {
+  border-color: #80bdff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.success-message {
+  color: #28a745;
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.career-btn {
+  background-color: #02101D;
+  color: #ffffff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.career-btn:hover {
+  background-color: #041f38;
+}
+
+@media (max-width: 600px) {
+  .career-form {
+    padding: 30px 20px;
+  }
 
   h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #343a40;
+    font-size: 24px;
   }
-  .career-section{
-    margin-top: 120px;
+}
 
+
+/* h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #343a40;
+  font-size: 28px;
+}
+
+.career-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  background-color: #f8f9fa; 
+}
+
+.career-form {
+  width: 100%;
+  max-width: 500px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  margin: 20px;
+}
+
+.input-field {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #495057;
+  font-size: 14px;
+}
+
+input[type="email"],
+input[type="text"],
+select,
+input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out;
+}
+
+input[type="email"]:focus,
+input[type="text"]:focus,
+select:focus {
+  border-color: #80bdff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.success-message {
+  color: #28a745;
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.career-btn {
+  background-color: #02101D;
+  color: #ffffff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.career-btn:hover {
+  background-color: #041f38;
+}
+
+@media (max-width: 600px) {
+  .career-form {
+    padding: 30px 20px;
   }
-  .input-field{
-    padding-top: 20px;
+
+  h2 {
+    font-size: 24px;
   }
-  form {
-    max-width: 600px;
-    margin: 0 auto;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-  }
-  
-  .input-control {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #495057;
-  }
-  
-  input[type="email"],
-  input[type="text"],
-  select,
-  input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
-    box-sizing: border-box;
-    transition: border-color 0.3s;
-  }
-  
-  input[type="email"]:focus,
-  input[type="text"]:focus,
-  select:focus {
-    border-color: #80bdff;
-    outline: none;
-  }
-  
-  .error-message {
-    color: #dc3545;
-    font-size: 14px;
-    margin-top: 5px;
-  }
-  
-  .success-message {
-    color: #28a745;
-    font-size: 16px;
-    margin-top: 10px;
-    text-align: center;
-  }
-  
-  button {
-    background-color: #007bff;
-    color: #ffffff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100%;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  @media (max-width: 600px) {
-    form {
-      padding: 15px;
-    }
-  }
+} */
+
   
  /* .body{
     background-color: #f7f7f7;

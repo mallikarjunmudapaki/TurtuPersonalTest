@@ -14,7 +14,7 @@ const services = [
     heading: 'Courier Services',
     text: 'Have you left or forgotten anything at home / office / anywhere? Get it picked and dropped at your doorstep.',
     whatsappNumber: '917975443090',
-    whatsappMessage: 'Hi! I have a package that needs to be picked up and delivered. Can you help me with the courier service details?',
+    whatsappMessage: 'Hi! I have a package ready for pickup and delivery. Could you please assist me with the courier service details?',
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const services = [
     heading: 'Food Delivery',
     text: 'Order your favorite meals and have them delivered to your doorstep.',
     whatsappNumber: '917975443090',
-    whatsappMessage: 'Hello! I’d like to order some food for delivery. Could you please guide me on how to proceed?',
+    whatsappMessage: " Hello! I'd like to place a food delivery order. Could you guide me on the steps to proceed?",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ const services = [
     heading: 'Pick and Drop',
     text: 'Need something picked up and dropped off? We can help!',
     whatsappNumber: '917975443090',
-    whatsappMessage: 'Hi there! I need something picked up from one location and dropped off at another. Could you please assist with this?',
+    whatsappMessage: 'Hi there! I need assistance with picking up an item from one location and delivering it to another. Could you help me with the details?',
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ const services = [
     heading: 'Cake Delivery',
     text: 'Order delicious cakes for any occasion.',
     whatsappNumber: '917975443090',
-    whatsappMessage: 'Hi! I want to order a cake for delivery. Could you please share the available options?',
+    whatsappMessage: 'Hi! I’m interested in ordering a cake. Could you share the available options with me?',
   },
   {
     id: 5,
@@ -46,7 +46,7 @@ const services = [
     heading: 'Gifts and Flowers',
     text: 'Send beautiful gifts and flowers to your loved ones.',
     whatsappNumber: '917975443090',
-    whatsappMessage: 'Hello! I’d like to send some gifts and flowers to a loved one. Can you help me with the choices?',
+    whatsappMessage: 'Hello! I’d like to send gifts and flowers to someone special. Can you assist me with the available choices?',
   },
   {
     id: 6,
@@ -54,7 +54,7 @@ const services = [
     heading: 'Medicine Delivery',
     text: 'Get your medicines delivered at your convenience.',
     whatsappNumber: '917975443090',
-    whatsappMessage: 'Hi! I need some medicines delivered to my location. Could you please help me with the process?',
+    whatsappMessage: 'Hi! I need some medicines delivered. Could you guide me through the process?',
   },
 ];
 
@@ -80,7 +80,7 @@ const ServicePage = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Read More
+                  Get Started
                 </a>
               </div>
             </div>

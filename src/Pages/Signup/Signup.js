@@ -97,7 +97,7 @@ function SignUp() {
     if (validate()) {
       try {
         const response = await axios.post(
-          'http://13.235.115.160:5000/api/register', 
+          `${process.env.REACT_APP_API_BASE_URL}/api/register`, 
           formData,
           { headers: { 'Content-Type': 'application/json' } }
         );
@@ -117,7 +117,7 @@ function SignUp() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'http://13.235.115.160:5000/api/verify_otp', 
+        `s${process.env.REACT_APP_API_BASE_URL}/api/verify_otp`, 
         JSON.stringify({
           email: formData.email,  // Use the email from the formData
           otp: otp  // OTP entered by the user
@@ -238,7 +238,7 @@ function SignUp() {
         {submissionStatus && <div className="signup-success">{submissionStatus}</div>}
         <div className='signup-text'>
           <p>Already have an account?</p>
-          <Link to={`/Login`}><span>Login</span></Link>
+          <Link to={`/Login`} className='login-text'><span>Login</span></Link>
         </div>
       </form>
        ) : (
