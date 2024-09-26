@@ -140,9 +140,10 @@ const Login = () => {
           </Link>
           <p>
             Don't have an account?{' '}
-            <span className="signup-link" onClick={() => (window.location.href = '/signup')}>
+            <Link to={`/signup`} className='signup-link'><span>SignUp</span></Link>
+            {/* <span className="signup-link" onClick={() => (window.location.href = '/signup')}>
               SignUp
-            </span>
+            </span> */}
           </p>
         </div>
       </div>
