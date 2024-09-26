@@ -18,7 +18,7 @@ export default function ForgotPassword() {
     const formData = new FormData();
     formData.append('email', email);
   
-    axios.post(`${process.env.REACT_APP_API_BASE_URL}/request_password_reset`, formData)
+    axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/request_password_reset`, formData)
       .then(response => {
         if (response.status === 200) {
           setMessage('A reset password link has been sent to your email. Please check your inbox.');
@@ -32,13 +32,27 @@ export default function ForgotPassword() {
         }
       })
       .catch(err => {
-        if (err.response && err.response.status === 404) {
-          setError('Email not registered. Please check and try again.');
+        if (err.response) {
+          if (err.response.status === 500) {
+            setError('Server error. Please try again later.');
+          } else if (err.response.status === 404) {
+            setError('Email not registered.');
+          } else {
+            setError('Unexpected error occurred.');
+          }
         } else {
-          setError('Error sending reset link. Make sure the email is registered.');
+          setError('Network error. Please try again.');
         }
-        setMessage('');
       });
+      
+    //   .catch(err => {
+    //     if (err.response && err.response.status === 404) {
+    //       setError('Email not registered. Please check and try again.');
+    //     } else {
+    //       setError('Error sending reset link. Make sure the email is registered.');
+    //     }
+    //     setMessage('');
+    //   });
   };
   
   return (
