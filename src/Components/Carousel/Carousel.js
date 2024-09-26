@@ -1,7 +1,9 @@
 import React, { useState,useEffect} from 'react';
 import './Carousel.css';
 import DeliveryImage from '../../Images/Delivery_carousel.png';
-import GiftDeliveryimg from '../../Images/Delivery_carousel2.png';
+import GiftDeliveryImg from '../../Images/Delivery_carousel2.png';
+import AnythingAnywhereImg from '../../Images/Anything_Anywhere.png';
+import CakeDeliveryImg from '../../Images/CakeDelivery.png';
 
 const Carousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -20,21 +22,21 @@ const Carousel = () => {
       text: "You can send #parcels and packages  #documents #food #cake and etc.",
       btn1: "Call To Order",
       btn2: "Whatsapp Now",
-      image: GiftDeliveryimg
+      image: AnythingAnywhereImg
     },
     {
       heading: "Worried about safe cake deliveries?",
       text: "We are the best, safest cake deliverers Pan INDIA Book your cake delivery now",
       btn1: "Call To Order",
       btn2: "Whatsapp Now",
-      image: GiftDeliveryimg
+      image: CakeDeliveryImg
     },
     {
       heading: "Send Gifts and flowers to your loved ones",
       text: "Now send any gifts and flowers at affordable prices across the city.",
       btn1: "Call To Order",
       btn2: "Whatsapp Now",
-      image: GiftDeliveryimg
+      image: GiftDeliveryImg
     }
   ];
 

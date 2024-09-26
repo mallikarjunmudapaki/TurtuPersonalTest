@@ -104,53 +104,7 @@ const Career = () => {
       }
     }
   };
-  // // Handle form submission
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-
-  //   if (!validateForm()) return;
-
-  //   if (!token) {
-  //     setErrors({ form: 'You must be logged in to submit the form.' });
-  //     return;
-  //   }
-
-  //   try {
-  //     // Create form data to send to the backend
-  //     const formDataToSend = new FormData();
-  //     formDataToSend.append('email', formData.email);
-  //     formDataToSend.append('phone_number', formData.phone_number);
-  //     formDataToSend.append('profile', formData.profile);
-  //     formDataToSend.append('resume_filename', formData.resume_filename);
-
-  //     // Make an API call to submit the form with the token
-  //     const response = await axios.post('http://13.235.115.160:5000/api/career', formDataToSend, {
-  //       headers: {
-  //         Authorization: `Bearer ${token}`, // Attach token in the Authorization header
-  //         'Content-Type': 'multipart/form-data',
-  //       },
-  //     });
-
-  //     // Handle success response
-  //     setSuccessMessage(response.data.message);
-  //     setFormData({
-  //       email: '',
-  //       phone_number: '',
-  //       profile: '',
-  //       resume_filename: null,
-  //     });
-  //   } catch (error) {
-  //     // Handle error response
-  //     if (error.response && error.response.status === 401) {
-  //       setErrors({ form: 'Unauthorized access. Please log in again.' });
-  //       // Optionally, redirect the user to the login page
-  //       // window.location.href = '/login';
-  //     } else {
-  //       setErrors({ form: 'An error occurred while submitting the form. Please try again.' });
-  //     }
-  //   }
-  // };
-
+ 
   return (
     <>
       <Header />
