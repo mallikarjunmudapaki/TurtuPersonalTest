@@ -1,4 +1,132 @@
-.login-section{
+/* Container for form */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* background-color: #f7f7f7; */
+}
+
+/* Form container */
+.login-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Form title */
+.login-title {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Form styling */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.login-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.login-button {
+  padding: 10px;
+  background-color: #02101D;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #041f38;
+}
+
+/* Error message styling */
+.error-message {
+  color: rgb(249, 132, 132);
+  font-size: 14px;
+}
+
+/* Success message styling */
+.success-message {
+  color: green;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Additional Links (forgot password, signup) */
+.login-links {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.forgot-password {
+  color: rgb(253, 182, 2);
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.signup-link {
+  color: rgb(253, 182, 2);
+  cursor: pointer;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .login-wrapper {
+      flex-direction: column;
+  }
+
+  .login-container {
+      width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-container {
+      width: 85%;
+      height: 80%;
+  }
+
+  .login-title {
+      margin-bottom: 10px;
+      margin-top: 10px;
+  }
+}
+
+/* .login-section{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -90,4 +218,4 @@
   .signup-link:hover {
     text-decoration: underline;
   }
-  
+   */

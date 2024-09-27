@@ -11,6 +11,7 @@ import BlogDetailArticle from './Pages/Blogs/BlogDetailArticle.js';
 import BlogsDetailsPage from './Pages/Blogs/BlogsDetailsPage.js';
 import ContactPage from './Pages/Contact/ContactPage.js';
 import ForgotPassword from './Pages/forgotPassword/ForgotPassword.js';
+import ResetPassword from './Pages/forgotPassword/ResetPassword.js';
 
 function App() {
   return (
@@ -27,8 +28,7 @@ function App() {
         <Route path="/Blog/:title" element={<BlogDetailArticle/>} />
         <Route path='/Contact' element={<ContactPage/>}/>
         <Route path='/forgot-password' element={<ForgotPassword/>}/>
-
-        
+        <Route path='/reset-password/:token' element={<ResetPassword/>}/>
         </Routes>
         </BrowserRouter>
         </AuthProvider>

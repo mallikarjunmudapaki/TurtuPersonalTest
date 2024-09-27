@@ -149,7 +149,9 @@ img {
     cursor: pointer;
     margin-left: 330px;
 }
-
+.signup-modal .modal-dialog{
+    max-width: 400px;
+}
     @media(max-width: 480px){
         .navbar{
             width: 100%;

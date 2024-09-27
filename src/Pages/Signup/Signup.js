@@ -117,7 +117,7 @@ function SignUp() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `s${process.env.REACT_APP_API_BASE_URL}/api/verify_otp`, 
+        `${process.env.REACT_APP_API_BASE_URL}/api/verify_otp`, 
         JSON.stringify({
           email: formData.email,  // Use the email from the formData
           otp: otp  // OTP entered by the user
@@ -126,7 +126,7 @@ function SignUp() {
       );
   
       if (response.data.status === 'success') {
-        setSubmissionStatus('Email verified successfully! Redirecting to home page...');
+        setSubmissionStatus('Email verified successfully! Redirecting to login page...');
         setTimeout(() => {
           navigate('/Login');
         }, 3000);
@@ -148,9 +148,9 @@ function SignUp() {
 
   return (
     <div className="signup-wrapper">
-  <div className="signup-image">
+  {/* <div className="signup-image">
     
-  </div>
+  </div> */}
     <div className="signup-container">
        {!isOtpSent ? (
       <form className="signup-form" onSubmit={handleSubmit}>
@@ -246,7 +246,7 @@ function SignUp() {
         <form className='otp-form' onSubmit={handleOtpSubmit}>
           <h2>Enter OTP</h2>
           <input type="text" name="otp" placeholder='Enter OTP' value={otp} onChange={(e) => setOtp(e.target.value)} required />
-          <button type="submit">Verify OTP</button>
+          <button type="submit"className='verify-button'>Verify OTP</button>
           {submissionStatus && <div className="signup-success">{submissionStatus}</div>}
         </form>
         </div>
