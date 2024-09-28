@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import './Signup.css';
-import signupimg from '../../Images/signup.jpg';
+
 
 function SignUp() {
   const [formData, setFormData] = useState({
@@ -24,6 +24,8 @@ function SignUp() {
   const [submissionStatus, setSubmissionStatus] = useState('');
   const [otp, setOtp] = useState('');
   const [isOtpSent, setIsOtpSent] = useState(false);
+  const [resendOtpStatus, setResendOtpStatus] = useState(''); // New state for resend OTP status
+  const [isResendingOtp, setIsResendingOtp] = useState(false);
   const navigate = useNavigate();
 
 
@@ -105,11 +107,14 @@ function SignUp() {
         if (response.data.status === 'success') {
           setIsOtpSent(true);
           setSubmissionStatus('OTP has been sent to your email. Please enter it to verify your account.');
+          
         } else {
           setSubmissionStatus(response.data.message);
+          
         }
       } catch (error) {
         setSubmissionStatus('Failed to submit the form. Please try again.');
+       
       }
     }
   };
@@ -126,7 +131,7 @@ function SignUp() {
       );
   
       if (response.data.status === 'success') {
-        setSubmissionStatus('Email verified successfully! Redirecting to login page...');
+        setSubmissionStatus('Email verified essfully! Redisuccrecting to login page...');
         setTimeout(() => {
           navigate('/Login');
         }, 3000);
@@ -138,6 +143,31 @@ function SignUp() {
     }
   };
   
+  const handleResendOtp = async () => {
+    setIsResendingOtp(true);
+    setResendOtpStatus('');
+
+    try {
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_BASE_URL}/api/resend_otp`, 
+        JSON.stringify({
+          email: formData.email,
+        }), 
+        { headers: { 'Content-Type': 'application/json' } }
+      );
+
+      if (response.data.status === 'success') {
+        setResendOtpStatus('OTP has been resent to your email.');
+      } else {
+        setResendOtpStatus(response.data.message);
+      }
+    } catch (error) {
+      setResendOtpStatus('Failed to resend OTP. Please try again.');
+    }
+    
+    setIsResendingOtp(false);
+  };
+
 
   const handleKeyPress = (e) => {
     const charCode = e.charCode;
@@ -244,10 +274,23 @@ function SignUp() {
        ) : (
         <div className='otp'>
         <form className='otp-form' onSubmit={handleOtpSubmit}>
+        {submissionStatus && <div className="signup-success">{submissionStatus}</div>}
           <h2>Enter OTP</h2>
           <input type="text" name="otp" placeholder='Enter OTP' value={otp} onChange={(e) => setOtp(e.target.value)} required />
           <button type="submit"className='verify-button'>Verify OTP</button>
-          {submissionStatus && <div className="signup-success">{submissionStatus}</div>}
+          <div className="resend-otp">
+                <p>Didn't receive the OTP?</p>
+                <button
+                  type="button"
+                  className="resend-otp-link"
+                  onClick={handleResendOtp}
+                  disabled={isResendingOtp}
+                >
+                  {isResendingOtp ? 'Resending OTP...' : 'Resend OTP'}
+                </button>
+              </div>
+              {resendOtpStatus && <div className="resend-status">{resendOtpStatus}</div>}
+
         </form>
         </div>
       )}

@@ -65,7 +65,7 @@
 
 /* Error message styling */
 .error-message {
-  color: rgb(249, 132, 132);
+  color: #c72030;
   font-size: 14px;
 }
 
@@ -117,7 +117,7 @@
 @media (max-width: 768px) {
   .login-container {
       width: 85%;
-      height: 80%;
+      height: 55%;
   }
 
   .login-title {

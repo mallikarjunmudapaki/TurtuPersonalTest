@@ -13,6 +13,7 @@ const services = [
     image: CourierServicesImg,
     heading: 'Courier Services',
     text: 'Have you left or forgotten anything at home / office / anywhere? Get it picked and dropped at your doorstep.',
+    btn:'Book Your Courier',
     whatsappNumber: '917975443090',
     whatsappMessage: 'Hi! I have a package ready for pickup and delivery. Could you please assist me with the courier service details?',
   },
@@ -21,6 +22,7 @@ const services = [
     image: FoodDeliveryImg,
     heading: 'Food Delivery',
     text: 'Order your favorite meals and have them delivered to your doorstep.',
+    btn: 'Order Now',
     whatsappNumber: '917975443090',
     whatsappMessage: " Hello! I'd like to place a food delivery order. Could you guide me on the steps to proceed?",
   },
@@ -29,6 +31,7 @@ const services = [
     image: PickanddropImage,
     heading: 'Pick and Drop',
     text: 'Need something picked up and dropped off? We can help!',
+    btn:'Book Your Pickup',
     whatsappNumber: '917975443090',
     whatsappMessage: 'Hi there! I need assistance with picking up an item from one location and delivering it to another. Could you help me with the details?',
   },
@@ -37,6 +40,7 @@ const services = [
     image: CakeDeliveryImage,
     heading: 'Cake Delivery',
     text: 'Order delicious cakes for any occasion.',
+    btn:'Order Now',
     whatsappNumber: '917975443090',
     whatsappMessage: 'Hi! I’m interested in ordering a cake. Could you share the available options with me?',
   },
@@ -45,6 +49,7 @@ const services = [
     image: GiftDeliveryImage,
     heading: 'Gifts and Flowers',
     text: 'Send beautiful gifts and flowers to your loved ones.',
+    btn:'Order Now',
     whatsappNumber: '917975443090',
     whatsappMessage: 'Hello! I’d like to send gifts and flowers to someone special. Can you assist me with the available choices?',
   },
@@ -53,6 +58,7 @@ const services = [
     image: MedicineDeliveryImage,
     heading: 'Medicine Delivery',
     text: 'Get your medicines delivered at your convenience.',
+    btn:'Order Now',
     whatsappNumber: '917975443090',
     whatsappMessage: 'Hi! I need some medicines delivered. Could you guide me through the process?',
   },
@@ -80,7 +86,7 @@ const ServicePage = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Get Started
+                  {service.btn}
                 </a>
               </div>
             </div>

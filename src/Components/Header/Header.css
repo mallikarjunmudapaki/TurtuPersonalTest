@@ -115,7 +115,7 @@ img {
     max-width: 400px; 
 }
 .login-modal .modal-content {
-    height: 560px; /* Adjust modal height */
+    height: 540px; /* Adjust modal height */
     margin: auto;  /* Center the modal vertically */
     display: flex;
     justify-content: center;
@@ -152,6 +152,45 @@ img {
 .signup-modal .modal-dialog{
     max-width: 400px;
 }
+
+.logout-btn{
+    background-color: #02101d;
+    padding: 5px;
+    color: white;
+}
+.logout-btn:hover{
+    background-color:#041f38 ;
+}
+
+.logout-btn {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  .logout-btn:hover {
+    background-color: #c82333;
+  }
+  
+  .remove-image-btn {
+    background-color: #ffc107;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .remove-image-btn:hover {
+    background-color: #e0a800;
+  }
+  
     @media(max-width: 480px){
         .navbar{
             width: 100%;

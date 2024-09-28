@@ -24,7 +24,7 @@
     z-index: 1;
   }
   .signup-error{
-    color: rgb(249, 132, 132);
+    color: #c72030;
     font-size: 14px;
   }
   /* Image container 
@@ -63,7 +63,7 @@
     font-size: 16px;
   }
   
-  .signup-button, .verify-button {
+  .signup-button {
     padding: 10px;
     background-color: #02101D;
     color: white;
@@ -72,7 +72,16 @@
     border-radius: 6px;
     cursor: pointer;
   }
-  
+  .verify-button{
+    padding: 10px;
+    background-color: #02101D;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+  }
   .signup-button, .verify-button:hover {
     background-color: #041f38;
   }
@@ -86,6 +95,79 @@
     color: black;
     text-align: center;
   }
+
+  /*resend otp*/
+  .otp-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .otp-form h2 {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .otp-form input {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  .verify-button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  .verify-button:hover {
+    background-color: #218838;
+  }
+  
+  .resend-otp {
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .resend-otp p {
+    margin: 0;
+    color: #555;
+  }
+  
+  .resend-otp-link {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  .resend-otp-link:disabled {
+    color: #aaa;
+    cursor: not-allowed;
+  }
+  
+  .resend-status {
+    margin-top: 10px;
+    font-size: 14px;
+    color: green;
+  }
+
+
+  
   /* Responsive design */
   @media (max-width: 1024px) {
     .signup-wrapper {
