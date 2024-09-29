@@ -125,8 +125,8 @@ const Career = () => {
             <label>Profile Applying For:</label>
             <select name="profile" value={formData.profile} onChange={handleChange}>
               <option value="">Select a profile</option>
-              <option value="Frontend">Frontend</option>
-              <option value="Backend">Backend</option>
+              <option value="Frontend">Frontend Developer</option>
+              <option value="Backend">Backend Developer</option>
               <option value="Data Analyst">Data Analyst</option>
               <option value="Support Executive">Support Executive</option>
               <option value="Other">Other</option>

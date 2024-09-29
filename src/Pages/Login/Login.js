@@ -102,52 +102,6 @@ const Login = () => {
   };
 
   return (
-    // <section className="login-section">
-    //   <div className="login-container">
-    //     <h2>Login</h2>
-    //     <form onSubmit={handleSubmit}>
-    //       <div className="form-group">
-    //         <label>Email:</label>
-    //         <input
-    //           type="email"
-    //           name="email"
-    //           value={formData.email}
-    //           onChange={handleChange}
-    //           placeholder="Enter your email"
-    //         />
-    //         {errors.email && <p className="error-message">{errors.email}</p>}
-    //       </div>
-    //       <div className="form-group">
-    //         <label>Password:</label>
-    //         <input
-    //           type="password"
-    //           name="password"
-    //           value={formData.password}
-    //           onChange={handleChange}
-    //           placeholder="Enter your password"
-    //         />
-    //         {errors.password && <p className="error-message">{errors.password}</p>}
-    //       </div>
-    //       <button type="submit" className="login-button">
-    //         Login
-    //       </button>
-    //       {errors.submit && <p className="error-message">{errors.submit}</p>}
-    //       {successMessage && <p className="success-message">{successMessage}</p>}
-    //     </form>
-    //     <div className="login-links">
-    //       <Link to="/forgot-password" className="forgot-password">
-    //         Forgot Password?
-    //       </Link>
-    //       <p>
-    //         Don't have an account?{' '}
-    //         <Link to={`/signup`} className='signup-link'><span>SignUp</span></Link>
-    //         {/* <span className="signup-link" onClick={() => (window.location.href = '/signup')}>
-    //           SignUp
-    //         </span> */}
-    //       </p>
-    //     </div>
-    //   </div>
-    // </section>
     <section className="login-wrapper">
   <div className="login-container">
     <h2 className="login-title">Login</h2>

@@ -65,35 +65,3 @@ export default function BlogsDetailsPage() {
     );
 }
 
-/*import Header from "../components/Header/Header";
-import './Blogs.css';
-import courierservicesimg from '../Images/CourierServices.png';
-import { Link } from "react-router-dom";
-
-export default function BlogsDetailsPage() {
-    return (
-        <>
-            <Header />
-            <section className="blogs-section pb-5" id="blogs">
-                    
-                    <div className="row mb-5">
-                        <div className="blogs">
-                            <div className="col">
-                                <div className="card shadow">
-                                    <img src={courierservicesimg} alt="" className="card-img-top" />
-                                    <div className="card-body">
-                                        <h3 className="text-center">Courier Services</h3>
-                                        <hr className="mx-auto w-75" />
-                                        <p>TURTU has made it easy now to get anything from anywhere in city limits.</p>
-                                        <Link to='/BlogDetail'>Explore More</Link>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-
-                </div>
-            </section>
-
-        </>
-    );
-}*/

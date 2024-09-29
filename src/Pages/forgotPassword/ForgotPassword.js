@@ -45,14 +45,7 @@ export default function ForgotPassword() {
         }
       });
       
-    //   .catch(err => {
-    //     if (err.response && err.response.status === 404) {
-    //       setError('Email not registered. Please check and try again.');
-    //     } else {
-    //       setError('Error sending reset link. Make sure the email is registered.');
-    //     }
-    //     setMessage('');
-    //   });
+ 
   };
   
   return (
