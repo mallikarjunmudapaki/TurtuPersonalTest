@@ -32,9 +32,6 @@ export default function Footer() {
                             <p>
                                 <a href="#services" className="text-white">Medicine delivery</a>
                             </p>
-                            <p>
-                                <a href="#services" className="text-white">Home made food</a>
-                            </p>
                         </div>
                         <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
                             <h5 className="text-uppercase mb-4 font-weight-bold text-warning">Company</h5>
@@ -48,13 +45,13 @@ export default function Footer() {
                                 <a href="#services" className="text-white">Services</a>
                             </p>
                             <p>
-                                <a href="#contact" className="text-white">Contact</a>
+                                <a href="/Contact" className="text-white">Contact</a>
                             </p>
                             <p>
                                 <a href="/Career" className="text-white">Career</a>
                             </p>
                             <p>
-                                <a href="/Blogs" className="text-white">Blogs</a>
+                                <a href="/blog" className="text-white">Blogs</a>
                             </p>
                         </div>
                         <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">

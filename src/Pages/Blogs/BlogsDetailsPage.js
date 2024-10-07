@@ -18,19 +18,19 @@ export default function BlogsDetailsPage() {
         {
             title: "Food Delivery",
             image: FoodDeliveryImg,
-            description: "TURTU has made it easy now to get anything from anywhere in city limits.",
+            description: "Order your favorite meals and have them delivered to your doorstep.",
             path: "FoodDelivery"
         },
         {
             title: "Pick and Drop",
             image: PickAndDropImg,
-            description: "TURTU has made it easy now to get anything from anywhere in city limits.",
+            description: "Need something picked up and dropped off? We can help!",
             path: "PickAndDrop"
         },
         {
             title: "Cake Delivery",
             image: CakeDeliveryImg,
-            description: "TURTU has made it easy now to get anything from anywhere in city limits.",
+            description: "Get freshly baked cakes delivered right to your doorstep.",
             path: "CakeDelivery"
         }
     ];

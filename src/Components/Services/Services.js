@@ -66,7 +66,7 @@ const services = [
 
 const ServicePage = () => {
   return (
-    <div className="container service-page">
+    <div className="container service-page" id='services'>
       {/* Row to hold 2 services per row with a gap */}
       <div className="row">
         {services.map((service) => (

@@ -66,9 +66,9 @@ function SignUp() {
     let errors = {};
     let isValid = true;
 
-    if (!formData.username.match(/^[a-zA-Z ]{3,20}$/)) {
+    if (!formData.username.match(/^[a-zA-Z ]{2,20}$/)) {
       isValid = false;
-      errors.username = 'Full Name should be 3 to 20 characters long and contain only alphabets.';
+      errors.username = 'Full Name should be 2 to 20 characters long and contain only alphabets.';
     }
 
     if (!formData.email.match(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/)) {

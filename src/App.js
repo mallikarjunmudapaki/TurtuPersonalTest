@@ -12,6 +12,7 @@ import BlogsDetailsPage from './Pages/Blogs/BlogsDetailsPage.js';
 import ContactPage from './Pages/Contact/ContactPage.js';
 import ForgotPassword from './Pages/forgotPassword/ForgotPassword.js';
 import ResetPassword from './Pages/forgotPassword/ResetPassword.js';
+import Query from './Components/AdminDashboard/Query/Query.js';
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
         <Route path='/Contact' element={<ContactPage/>}/>
         <Route path='/forgot-password' element={<ForgotPassword/>}/>
         <Route path='/reset-password/:token' element={<ResetPassword/>}/>
+        <Route path='/reset-password' element={<ResetPassword/>}/>
+        <Route path='/dashboard' element={<Query/>}/>
         </Routes>
         </BrowserRouter>
         </AuthProvider>

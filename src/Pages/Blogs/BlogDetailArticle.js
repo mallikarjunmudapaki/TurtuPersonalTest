@@ -11,19 +11,19 @@ export default function BlogDetailArticlePage() {
     const blogContent = {
         CourierServices: {
             image: CourierService,
-            description: "Courier service description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            description: "Our courier services offer reliable and secure delivery solutions tailored to meet your specific needs. Whether you require scheduled deliveries, bulk shipments, or safe handling of important documents, we ensure your packages arrive at their destination with care and professionalism. With advanced tracking systems and flexible service options, we provide peace of mind and efficiency for all your local delivery needs. Trust us to handle your deliveries with precision and a focus on customer satisfaction."
         },
         FoodDelivery: {
             image: CourierService,
-            description: "Food delivery description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            description: "Our food delivery services offer a fast, reliable, and convenient solution to satisfy your cravings. Whether you’re ordering from your favorite local restaurant or trying something new, we ensure that your meals arrive fresh and on time. With flexible delivery options, easy online ordering, and real-time tracking, we make sure your food is handled with care from the kitchen to your door. Whether it’s a quick lunch, dinner for the family, or a special treat, you can trust us to deliver delicious meals right to your doorstep."
         },
         PickAndDrop: {
             image: CourierService,
-            description: "Pick and drop description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            description: "Our pick and drop services offer a convenient and hassle-free way to transport your items from one location to another. Whether it’s documents, packages or any other, we provide reliable and timely pickups and deliveries, ensuring your items reach their destination safely. With flexible scheduling and real-time tracking, we make it easy to manage your pickups and drops at your convenience. Whether for personal or business needs, trust us to handle your items with care and efficiency, offering a smooth and seamless service experience."
         },
         CakeDelivery:{
             image: CourierService,
-            description: "Cake delivery description. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            description: "Our cake delivery services bring delicious, freshly-baked cakes straight to your door, perfect for any occasion. Whether it's a birthday, anniversary, or a special celebration, we ensure your cakes arrive in pristine condition and right on time. Choose from a variety of flavors and designs, and let us take care of the rest with prompt, reliable delivery. From elegant wedding cakes to delightful cupcakes, we make your sweet moments even more memorable with hassle-free delivery and exceptional service."
         }
     };
 

@@ -69,7 +69,7 @@ const Carousel = () => {
     window.location.href = "tel:+917975443090";
   };
   return (
-    <section className='Carousel-section'>
+    <section className='Carousel-section' id='home'>
     <div className="carousel-container">
       <div className="carousel-content">
         <h2>{carouselItems[activeIndex].heading}</h2>

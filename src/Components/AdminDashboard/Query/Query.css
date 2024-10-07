@@ -1,0 +1,92 @@
+.admin-dashboard-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .tabs-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .tab-button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .tab-button.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .tab-button:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .filter-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  
+  .filter-input {
+    padding: 8px;
+    width: 100%;
+    max-width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .table-wrapper {
+    margin-top: 20px;
+    padding:30px;
+  }
+  .table-wrapper > h3{
+    text-align: center;
+  }
+  
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .custom-table th,
+  .custom-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  .custom-table td {
+    font-size: 14px;
+  }
+  .custom-table th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .custom-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .table-header-cell {
+    text-align: left;
+    padding: 10px;
+    font-weight: bold;
+  }
+  
+  .table-cell {
+    padding: 10px;
+  }
+  
+  .error-message-container {
+    color: red;
+    text-align: center;
+  }
+  
