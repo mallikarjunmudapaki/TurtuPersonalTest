@@ -1,92 +1,197 @@
 .admin-dashboard-container {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-  }
-  
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: #f0f0f0;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.tab-button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.tab-button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.filter-input {
+  padding: 8px;
+  width: 100%;
+  max-width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+  transition: max-width 0.3s ease;
+}
+
+.table-wrapper {
+  margin-top: 0px;
+  padding: 30px;
+}
+
+.table-wrapper > h3 {
+  text-align: center;
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.custom-table th,
+.custom-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.custom-table td {
+  font-size: 14px;
+}
+
+.custom-table th {
+  background-color: #007bff;
+  color: white;
+}
+
+.custom-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.table-header-cell {
+  text-align: left;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.table-cell {
+  padding: 10px;
+}
+
+.error-message-container {
+  color: red;
+  text-align: center;
+}
+
+.c-table-header-cell {
+  width: 10%;
+}
+
+.query {
+  width: 25%;
+}
+
+/* Main filter input styling */
+.filter-input {
+  padding: 8px;
+  width: 100%;
+  max-width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   .tabs-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+    flex-direction: column;
+    align-items: center;
   }
-  
+
   .tab-button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    background-color: #f0f0f0;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .tab-button.active {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .tab-button:hover {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .filter-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 15px;
-  }
-  
-  .filter-input {
-    padding: 8px;
+    margin: 10px 0;
     width: 100%;
     max-width: 250px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-right: 10px;
   }
-  
-  .table-wrapper {
-    margin-top: 20px;
-    padding:30px;
-  }
-  .table-wrapper > h3{
-    text-align: center;
-  }
-  
-  .custom-table {
+
+  /* Make filter input the same width as the tab buttons */
+  .filter-input {
     width: 100%;
-    border-collapse: collapse;
+    max-width: 250px;
+    margin: 10px 0; /* Add margin for spacing */
   }
-  
+
+  .table-wrapper {
+    padding: 15px;
+  }
+
   .custom-table th,
   .custom-table td {
-    border: 1px solid #ddd;
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .custom-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .table-header-cell,
+  .table-cell {
     padding: 8px;
     text-align: left;
   }
+
+  .c-table-header-cell {
+    width: auto;
+  }
+
+  .query {
+    width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabs-container {
+    flex-direction: column;
+  }
+
+  .tab-button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  /* Match search bar width to tab buttons on smaller screens */
+  .filter-input {
+    width: 100%;
+    margin: 5px 0; /* Add margin for spacing */
+  }
+
+  .custom-table th,
   .custom-table td {
-    font-size: 14px;
+    font-size: 11px;
+    padding: 4px;
   }
-  .custom-table th {
-    background-color: #007bff;
-    color: white;
+
+  .custom-table {
+    font-size: 10px;
   }
-  
-  .custom-table tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .table-header-cell {
-    text-align: left;
-    padding: 10px;
-    font-weight: bold;
-  }
-  
+
+  .table-header-cell,
   .table-cell {
-    padding: 10px;
+    padding: 5px;
   }
-  
-  .error-message-container {
-    color: red;
-    text-align: center;
-  }
-  
+}
+

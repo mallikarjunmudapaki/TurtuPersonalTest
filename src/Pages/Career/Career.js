@@ -15,7 +15,6 @@ const Career = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const [token, setToken] = useState(null);
 
-
   // Handle input change
   const handleChange = (e) => {
     const { name, value, files } = e.target;
@@ -55,61 +54,55 @@ const Career = () => {
 
   useEffect(() => {
     const savedToken = localStorage.getItem('authToken');
-    console.log('Token from localStorage:', savedToken);  // Debugging token fetched from localStorage
     if (savedToken) {
       setToken(savedToken);
     }
   }, []);
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!validateForm()) {
       return;
     }
-  
-    console.log('Token before submitting form:', token);  // Debugging token before submission
-  
+
     const formDataToSubmit = new FormData();
     formDataToSubmit.append('email', formData.email);
     formDataToSubmit.append('phone_number', formData.phone_number);
     formDataToSubmit.append('profile', formData.profile);
     formDataToSubmit.append('resume', formData.resume_filename);
-  
+
     try {
       const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/career`, formDataToSubmit, {
         headers: {
           'Content-Type': 'multipart/form-data',
-          'Authorization': `Bearer ${token}` // Attach the token here
+          'Authorization': `Bearer ${token}`, // Attach the token here
         },
       });
-  
-      console.log('Response from backend:', response);  // Debugging the response
-  
+
       if (response.status === 201) {
-        const { user_data } = response.data.data;
-        console.log('Decoded user data:', user_data);  // Check user data from the response
-  
         setSuccessMessage('Application submitted successfully!');
         setFormData({ email: '', phone_number: '', profile: '', resume_filename: null });
         setErrors({});
         setTimeout(() => setSuccessMessage(''), 3000);
+      } else {
+        setErrors({ form: 'An unexpected error occurred.' });
       }
     } catch (error) {
-      console.error('Error response:', error);  // Debugging error response
+      console.error('Error response:', error);
       if (error.response && error.response.data) {
-        setErrors({ ...errors, apiError: error.response.data.message });
+        setErrors({ apiError: error.response.data.message });
       } else {
-        console.error('Unknown error occurred:', error);
+        setErrors({ form: 'An unknown error occurred.' });
       }
     }
   };
- 
+
   return (
     <>
       <Header />
       <section className="career-section">
-        <form onSubmit={handleSubmit} className='career-form'>
+        <form onSubmit={handleSubmit} className="career-form">
           <h2>Career Application Form</h2>
           <div>
             <label>Email:</label>
@@ -138,7 +131,7 @@ const Career = () => {
             <input type="file" name="resume_filename" accept=".pdf,.doc,.docx" onChange={handleChange} />
             {errors.resume_filename && <p className="error-message">{errors.resume_filename}</p>}
           </div>
-          <button type="submit" className='career-btn'>Submit</button>
+          <button type="submit" className="career-btn">Submit</button>
           {successMessage && <p className="success-message">{successMessage}</p>}
           {errors.form && <p className="error-message">{errors.form}</p>}
         </form>
@@ -148,5 +141,7 @@ const Career = () => {
 };
 
 export default Career;
+
+
 
 
