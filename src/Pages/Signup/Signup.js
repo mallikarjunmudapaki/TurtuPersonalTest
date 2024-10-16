@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import './Signup.css';
+import Header from '../../Components/Header/Header';
 
 
 function SignUp() {
@@ -177,6 +178,8 @@ function SignUp() {
   };
 
   return (
+    <>
+    <Header/>
     <div className="signup-wrapper">
   {/* <div className="signup-image">
     
@@ -297,6 +300,7 @@ function SignUp() {
        
     </div>
     </div>
+    </>
   );
 }
 

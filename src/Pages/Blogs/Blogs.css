@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     width: 80%;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
   }
   
   .blogs {
@@ -98,6 +98,7 @@
         padding: 20px;
         margin-top: 0; 
         width: 100%;
+        display: flex;
         flex-direction: column;
         align-items: center;
     }
@@ -107,7 +108,12 @@
         margin-bottom: 20px;
     }
     .blogs-section{
-      margin-top: -70px;
+      margin-top: 10px;
+    }
+    .blogs-section {
+     
+      width: 90%;
+      /*margin: 0 auto;*/
     }
   }
   

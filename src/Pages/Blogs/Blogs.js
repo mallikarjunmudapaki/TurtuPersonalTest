@@ -9,7 +9,7 @@ export default function Blogs() {
         <Header/>
             <header className="header text-center">
           <h2>Blogs</h2>
-          <hr className="HLine mx-auto mb-5" />
+          <hr className="HLine mx-auto" />
         </header>
             <div className="container">
                 <BlogsDetailsPage />

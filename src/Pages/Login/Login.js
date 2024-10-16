@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'; // Import Link for navigation
 import './Login.css'; // Separate CSS file for styling
+import Header from '../../Components/Header/Header';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -102,6 +103,9 @@ const Login = () => {
   };
 
   return (
+    <>
+    <Header/>
+  
     <section className="login-wrapper">
   <div className="login-container">
     <h2 className="login-title">Login</h2>
@@ -140,7 +144,7 @@ const Login = () => {
     </div>
   </div>
 </section>
-
+</>
   );
 };
 
