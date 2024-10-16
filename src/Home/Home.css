@@ -1,3 +1,24 @@
-.testimonial{
-    text-align: center;
+.content-wrapper {
+    max-width: 1200px; /* Maximum width for larger screens */
+    margin: 0 auto; /* Center the wrapper */
+    padding: 40px; /* General padding */
+}
+
+.testimonial-section {
+    margin: 20px 0; /* Margin for spacing */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-wrapper {
+        padding: 10px; 
+    }
+
+    .header-testimonial h2 {
+        font-size: 1.5rem; 
+
+    }
+    .testimonial-head{
+        margin-bottom: 30px;
+    }
 }

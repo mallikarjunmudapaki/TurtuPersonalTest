@@ -6,7 +6,7 @@
   
   }
   .contact-form{
-    max-width: 450px;
+    max-width: 430px;
     margin: 0 auto;
     background: #ffffff;
     border-radius: 8px;
@@ -28,7 +28,7 @@
   }
   input[type=text],textarea{
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     border: 1px solid #ccc;
     margin-top: 6px;
     margin-bottom: 16px;
@@ -83,7 +83,7 @@
     .form{
       width: 100%;
     }
-    .contact-image{
+    /* .contact-image{
       display: flex;
       align-items: center;
       justify-content: center;
@@ -97,8 +97,7 @@
       margin-right: 20px;
       margin-top: -65px;
       
-    }
-  
+    } */
   }
   
   

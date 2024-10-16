@@ -6,13 +6,14 @@ import CakeDeliveryImage from '../../Images/Cake_Delivery.png';
 import GiftDeliveryImage from '../../Images/Gift Delivery.png';
 import PickanddropImage from '../../Images/Pick and Drop.png';
 import MedicineDeliveryImage from '../../Images/Medicine_Delivery.png';
+import './Services.css';
 
 const services = [
   {
     id: 1,
     image: CourierServicesImg,
     heading: 'Courier Services',
-    text: 'Have you left or forgotten anything at home / office / anywhere? Get it picked and dropped at your doorstep.',
+    text: 'Forgot something at home or office? We’ll pick it up and deliver it to your doorstep.',
     btn:'Book Your Courier',
     whatsappNumber: '917975443090',
     whatsappMessage: 'Hi! I have a package ready for pickup and delivery. Could you please assist me with the courier service details?',
@@ -66,6 +67,7 @@ const services = [
 
 const ServicePage = () => {
   return (
+    <div className="wrapper">
     <div className="container service-page" id='services'>
       {/* Row to hold 2 services per row with a gap */}
       <div className="row">
@@ -93,6 +95,7 @@ const ServicePage = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };

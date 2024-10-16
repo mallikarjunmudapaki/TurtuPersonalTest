@@ -48,5 +48,9 @@
       padding: 20px !important;
       gap: 0;
     }
+    .counter-display{
+      display: flex;
+      flex-direction: column;
+    }
   }
   

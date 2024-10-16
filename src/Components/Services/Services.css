@@ -1,7 +1,6 @@
-.service-page {
-    margin-top: 10px;
-  }
-  
+.header-service {
+  margin-top: 140px !important;
+}
   .service-item {
     display: flex;
     justify-content: center;
@@ -27,17 +26,18 @@
     object-fit: cover;
     border-radius: 10px 0 0 10px;
     width: 100%;
-    max-width: 90%;
+    max-width: 85%;
     object-fit:contain;
   }
   
   .service-heading {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
   }
   
   .service-text {
     margin: 10px 0;
+    font-size: 14px;
   }
   
   .service-btn {
@@ -51,9 +51,9 @@
     background-color: #041f38;
     border-color: #041f38;
   }
-  .header-service{
-    margin-top: 50px;
-  }
+ .service-page .row{
+  width: 100%;
+ }
   @keyframes fadeInUp {
     0% {
       transform: translateY(20px);
@@ -67,6 +67,9 @@
   
   /* Responsive Design */
   @media (max-width: 768px) {
+    .header-service {
+      margin-top: 0px !important;
+    }
     .service-box {
       flex-direction: column;
       align-items: center;

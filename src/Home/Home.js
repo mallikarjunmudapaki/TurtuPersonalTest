@@ -16,15 +16,17 @@ export default function Home() {
         <>
         <Header/>
         <Carousel/>
+        <div className="content-wrapper">
         <About/>
         <CounterDisplay/>
         <HowItWorks/>
         <ServiceDisplay/>
-        <div className="App">
+        <div className="testimonial-head">
         <header className="header-testimonial text-center my-5">
           <h2>What customer say</h2>
         </header>
         <TestimonialCarousel />
+      </div>
       </div>
       <Footer/>
 
