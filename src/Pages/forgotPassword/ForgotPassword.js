@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { FaArrowLeft } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom'; 
+
 import './Forgot_Reset_Password.css';
+
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setEmail(e.target.value);
@@ -47,8 +52,16 @@ export default function ForgotPassword() {
       
  
   };
-  
+   // Navigate back to the previous page
+   const handleBackClick = () => {
+    navigate(-1);
+  };
   return (
+    <>
+     {/* Back icon */}
+  <button className="back-button" onClick={handleBackClick}>
+  <FaArrowLeft /> Back
+</button>
     <div className="email-container">
       <form className="email-form" onSubmit={handleSubmit}>
         <div className="email-form-group">
@@ -73,5 +86,6 @@ export default function ForgotPassword() {
         <button className="email-submit-button" type="submit">Submit</button>
       </form>
     </div>
+    </>
   );
 }

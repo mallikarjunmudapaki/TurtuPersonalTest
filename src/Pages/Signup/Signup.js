@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useNavigate} from 'react-router-dom';
 import axios from 'axios';
+import { FaArrowLeft } from 'react-icons/fa';
 import './Signup.css';
-import Header from '../../Components/Header/Header';
+
 
 
 function SignUp() {
@@ -176,15 +177,22 @@ function SignUp() {
       e.preventDefault();
     }
   };
-
+  // Navigate back to the previous page
+  const handleBackClick = () => {
+    navigate(-1);
+  };
   return (
     <>
-    <Header/>
     <div className="signup-wrapper">
+        {/* Back icon */}
+  <button className="back-button" onClick={handleBackClick}>
+            <FaArrowLeft /> Back
+          </button>
   {/* <div className="signup-image">
     
   </div> */}
     <div className="signup-container">
+
        {!isOtpSent ? (
       <form className="signup-form" onSubmit={handleSubmit}>
       <h2 className="signup-title">Signup</h2>

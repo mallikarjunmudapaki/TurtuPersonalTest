@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom'; // Import Link for navigation
-import './Login.css'; // Separate CSS file for styling
-import Header from '../../Components/Header/Header';
+import { Link,useNavigate } from 'react-router-dom'; 
+import { FaArrowLeft } from 'react-icons/fa';
+import './Login.css';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -12,7 +12,7 @@ const Login = () => {
 
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState('');
-
+  const navigate = useNavigate();
   // Handle input change
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -101,12 +101,17 @@ const Login = () => {
       }
     }
   };
-
+ // Navigate back to the previous page
+ const handleBackClick = () => {
+  navigate(-1);
+};
   return (
     <>
-    <Header/>
-  
     <section className="login-wrapper">
+       {/* Back icon */}
+  <button className="back-button" onClick={handleBackClick}>
+            <FaArrowLeft /> Back
+          </button>
   <div className="login-container">
     <h2 className="login-title">Login</h2>
     <form className="login-form" onSubmit={handleSubmit}>

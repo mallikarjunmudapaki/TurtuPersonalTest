@@ -97,7 +97,7 @@ export default function Header() {
               </div>
               <div className="nav-item">
                 <div className="nav-link">
-                  <Link to="/blog" smooth className="navigation">
+                  <Link to="/blogs" smooth className="navigation">
                     Blogs
                   </Link>
                 </div>
