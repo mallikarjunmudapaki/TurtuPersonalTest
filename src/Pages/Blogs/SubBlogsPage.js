@@ -25,7 +25,11 @@ const SubBlogsPage = () => {
             { title: "Cake Delivery", path:"CakeDelivery", image: img },
             { title: "Cake Delivery", path: "CakeDelivery", image: img }
         ],
-        // Add more blog titles and their corresponding sub-blogs here
+        CakeDelivery: [
+            { title: "Cake Delivery", path:"CakeDelivery", image: img },
+            { title: "Cake Delivery", path: "CakeDelivery", image: img }
+        ],
+    
     };
 
     const currentSubBlogs = subBlogs[blogTitle] || [];
@@ -39,7 +43,7 @@ const SubBlogsPage = () => {
                         <Link to={`/blog/${blogTitle}/${subBlog.path}`} className="sub-blog-link">
                             <img src={subBlog.image} alt={subBlog.title} className="sub-blog-image" />
                             <span className="sub-blog-text">{subBlog.title}</span>
-                            <button className='sub-blog-btn'>More details</button>
+                            <button className='sub-blog-btn'>Explore More</button>
                         </Link>
                     </li>
                 ))}

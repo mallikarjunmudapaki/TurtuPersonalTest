@@ -4,7 +4,7 @@ import './ContactPage.css';
 export default function ContactPage(){
     return(
         <>
-        <Header/>
+        
         <div className="contactpage">
         <Contact/>
         </div>

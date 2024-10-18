@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
-import './Contact.css'; // Your CSS file for styling
+import './Contact.css'; 
+import { FaArrowLeft } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 export default function Contact() {
   const [formValues, setFormValues] = useState({
@@ -11,7 +13,8 @@ export default function Contact() {
   });
   const [formErrors, setFormErrors] = useState({});
   const [isSuccess, setIsSuccess] = useState(false);
-  const [message, setMessage] = useState(''); // Message state for showing feedback
+  const [message, setMessage] = useState(''); 
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -85,9 +88,15 @@ export default function Contact() {
     }
     return errors;
   };
+  const handleBackClick = () => {
+    navigate(-1);
+  };
 
   return (
     <div className='contact-section'>
+        <button className="back-button" onClick={handleBackClick}>
+            <FaArrowLeft /> Back
+          </button>
     <form onSubmit={handleSubmit} className="contact-form">
       <h2>Contact Us</h2>
       {message && <p className={isSuccess ? 'success-message' : 'error-message'}>{message}</p>}
