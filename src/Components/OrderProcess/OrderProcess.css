@@ -1,0 +1,102 @@
+/* Main container for the order process */
+.order-process-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: #fcf9f1;
+    border-radius: 20px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+    gap: 50px;
+    position: relative;
+    overflow: hidden;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+.order-process-header{
+    padding-top: 20px;
+}
+/* Styling for each step */
+.step {
+    flex: 1;
+    text-align: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+    transition: all 0.5s ease;
+    animation: fadeInSlideUp 1s ease forwards;
+    animation-delay: var(--delay, 0s);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Image inside the step */
+.step img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease; /* Add scaling on hover */
+}
+
+/* Scale image on hover */
+.step:hover img {
+    transform: scale(1.1);
+}
+
+/* Step title */
+.step h3 {
+    font-size: 1.3rem;
+    color: #050505;
+    margin-bottom: 12px;
+    display: inline-block;
+    transition: color 0.3s ease; /* Change color on hover */
+}
+
+/* Change title color on hover */
+.step:hover h3 {
+    color: #ffca28;
+}
+
+/* Step description */
+.step p {
+    font-size: 0.8rem;
+    color: #546e7a;
+    line-height: 1.4;
+}
+
+
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .order-process-container {
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .step {
+        width: 100%;
+        padding: 15px;
+    }
+
+    
+}

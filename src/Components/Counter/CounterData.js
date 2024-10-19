@@ -12,7 +12,7 @@ export const CounterData=[
         title:'repeated customers',
     },
     {
-        count: '30+',
+        count: '45+',
         title:'Small business',
     },
 ]

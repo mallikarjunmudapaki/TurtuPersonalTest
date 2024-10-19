@@ -48,7 +48,7 @@ export default function Footer() {
                                 <a href="/Contact" className="text-white">Contact</a>
                             </p>
                             <p>
-                                <a href="/Career" className="text-white">Career</a>
+                                <a href="/career" className="text-white">Career</a>
                             </p>
                             <p>
                                 <a href="/blog" className="text-white">Blogs</a>

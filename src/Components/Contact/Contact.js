@@ -100,46 +100,54 @@ export default function Contact() {
     <form onSubmit={handleSubmit} className="contact-form">
       <h2>Contact Us</h2>
       {message && <p className={isSuccess ? 'success-message' : 'error-message'}>{message}</p>}
-      <div>
+      <div className='contact-input-field'>
         <label>Username:</label>
         <input
+        className='contact-input'
           type="text"
           name="username"
           placeholder="Enter username"
           value={formValues.username}
           onChange={handleChange}
+          required
         />
         <p className="error-message">{formErrors.username}</p>
       </div>
-      <div>
+      <div className='contact-input-field'>
         <label>Email:</label>
         <input
+        className='contact-input'
           type="email"
           name="email"
           placeholder="Enter email ID"
           value={formValues.email}
           onChange={handleChange}
+          required
         />
         <p className="error-message">{formErrors.email}</p>
       </div>
-      <div>
+      <div className='contact-input-field'>
         <label>Phone Number:</label>
         <input
+        className='contact-input'
           type="text"
           name="phone_number"
           placeholder="Enter phone number"
           value={formValues.phone_number}
           onChange={handleChange}
+          required
         />
         <p className="error-message">{formErrors.phone_number}</p>
       </div>
-      <div>
+      <div className='contact-input-field'>
         <label>Query:</label>
         <textarea
+        className='contact-input'
           name="queries"
           placeholder="Enter your query"
           value={formValues.queries}
           onChange={handleChange}
+          required
         ></textarea>
         <p className="error-message">{formErrors.queries}</p>
       </div>

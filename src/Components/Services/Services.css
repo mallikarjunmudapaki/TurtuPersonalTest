@@ -68,7 +68,8 @@
   /* Responsive Design */
   @media (max-width: 768px) {
     .header-service {
-      margin-top: 0px !important;
+      margin-top: 10px !important;
+      padding-top: 30px;
     }
     .service-box {
       flex-direction: column;
@@ -85,8 +86,6 @@
     .service-btn {
       align-self: center;
     }
-    .header-service{
-      margin-top: 0px;
-    }
+    
   }
   

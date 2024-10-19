@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Career.css';
-import Header from '../../Components/Header/Header';
+import { FaArrowLeft } from 'react-icons/fa';
+import { useNavigate} from 'react-router-dom';
 
 const Career = () => {
   const [formData, setFormData] = useState({
@@ -14,15 +15,15 @@ const Career = () => {
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState('');
   const [token, setToken] = useState(null);
+  
+const navigate = useNavigate();
 
-  // Handle input change
   const handleChange = (e) => {
     const { name, value, files } = e.target;
     setFormData({ ...formData, [name]: files ? files[0] : value });
-    setErrors({ ...errors, [name]: '' }); // Clear error on input change
+    setErrors({ ...errors, [name]: '' });
   };
 
-  // Form validation
   const validateForm = () => {
     const newErrors = {};
 
@@ -76,7 +77,7 @@ const Career = () => {
       const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/career`, formDataToSubmit, {
         headers: {
           'Content-Type': 'multipart/form-data',
-          'Authorization': `Bearer ${token}`, // Attach the token here
+          'Authorization': `Bearer ${token}`, 
         },
       });
 
@@ -97,26 +98,30 @@ const Career = () => {
       }
     }
   };
-
+  const handleBackClick = () => {
+    navigate(-1);
+  };
   return (
     <>
-      <Header />
+       <button className="back-button" onClick={handleBackClick}>
+            <FaArrowLeft /> Back
+          </button>
       <section className="career-section">
         <form onSubmit={handleSubmit} className="career-form">
-          <h2>Career Application Form</h2>
-          <div>
-            <label>Email:</label>
-            <input type="email" name="email" placeholder="Enter email ID" value={formData.email} onChange={handleChange} />
+          <h2 className="career-heading">Career Application Form</h2>
+          <div className="input-field">
+            <label className="input-label">Email:</label>
+            <input className="input-field-element" type="email" name="email" placeholder="Enter email ID" value={formData.email} onChange={handleChange} required />
             {errors.email && <p className="error-message">{errors.email}</p>}
           </div>
-          <div>
-            <label>Phone Number:</label>
-            <input type="text" name="phone_number" placeholder="Enter phone number" value={formData.phone_number} onChange={handleChange} />
+          <div className="input-field">
+            <label className="input-label">Phone Number:</label>
+            <input className="input-field-element" type="text" name="phone_number" placeholder="Enter phone number" value={formData.phone_number} onChange={handleChange} required/>
             {errors.phone_number && <p className="error-message">{errors.phone_number}</p>}
           </div>
           <div className="input-field">
-            <label>Profile Applying For:</label>
-            <select name="profile" value={formData.profile} onChange={handleChange}>
+            <label className="input-label">Profile Applying For:</label>
+            <select className="input-field-element" name="profile" value={formData.profile} onChange={handleChange} required>
               <option value="">Select a profile</option>
               <option value="Frontend">Frontend Developer</option>
               <option value="Backend">Backend Developer</option>
@@ -127,8 +132,8 @@ const Career = () => {
             {errors.profile && <p className="error-message">{errors.profile}</p>}
           </div>
           <div className="input-field">
-            <label>Upload Resume (PDF, DOC, DOCX):</label>
-            <input type="file" name="resume_filename" accept=".pdf,.doc,.docx" onChange={handleChange} />
+            <label className="input-label">Upload Resume (PDF, DOC, DOCX):</label>
+            <input className="input-field-element" type="file" name="resume_filename" accept=".pdf,.doc,.docx" onChange={handleChange} required/>
             {errors.resume_filename && <p className="error-message">{errors.resume_filename}</p>}
           </div>
           <button type="submit" className="career-btn">Submit</button>
@@ -141,7 +146,3 @@ const Career = () => {
 };
 
 export default Career;
-
-
-
-

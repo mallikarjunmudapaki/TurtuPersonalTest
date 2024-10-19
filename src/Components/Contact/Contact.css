@@ -1,109 +1,133 @@
-.contact{
-    background-color: rgb(249,249,249);
-    padding-top: 40px;
-    padding-bottom: 60px;
-  
-  }
-  .contact-section{
-    height: 100vh;
-    padding-bottom: 20px;
-  }
-  .contact-form{
-    max-width: 400px;
-    margin: 0 auto;
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    
-  }
-  /*.contact-form{
-    background-color: rgb(255,249,224);
-  }*/
-  .container{
+/* Contact Section */
+.contact {
+  padding-top: 40px;
+  background-color: #f4f4f4;
+  height: 90vh; /* Adjust to fit the screen */
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 7px;
+}
+
+/* Contact Form Container */
+.contact-form {
+  max-width: 350px; /* Reduced the width for a compact design */
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Contact Form Title */
+.contact-form > h2 {
+  text-align: center;
+  font-size: 24px; /* Reduced font size */
+  margin-bottom: 20px;
+}
+
+/* Input Fields */
+.contact-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 6px;
+  font-size: 0.9rem; 
+}
+
+.contact-input::placeholder {
+  font-size: 12px; 
+}
+
+/* Input Labels */
+.contact-input-field > label {
+  font-size: 14px; 
+}
+
+/* Submit Button */
+.contact-btn {
+  padding: 10px;
+  width: 100%;
+  background-color: #02101D;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem; /* Reduced button font size */
+  cursor: pointer;
+}
+
+.contact-btn:hover {
+  background-color: #041f38;
+}
+
+/* Success Message */
+.message-success {
+  color: green;
+  margin-top: 10px;
+  font-size: 16px; /* Reduced success message size */
+}
+
+/* Container for Image (if used) */
+.contact-image img {
+  height: 78%;
+  width: 75%;
+  object-fit: contain;
+  margin-left: -80px;
+}
+
+/* Margin for spacing */
+.contact-margin {
+  margin-top: 50px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .contact-form {
+    margin-top: 30px;
+    width: 85%;
+    padding: 15px;
   }
 
-  input[type=text],textarea{
+  .contact-btn {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contact-section {
+    height: 85vh;
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-top: 6px;
-    /*margin-bottom: 16px;*/
-    resize: vertical;
-  } 
-  input[type=email]{
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-  } 
-  .contact-btn{
-    padding: 10px;
-    width: 100%;
-    background-color:#02101D;
-    color: white;
-    border: none;
-  
+    max-width: 350px; /* Reduced width for mobile */
+    padding-bottom: 60px;
   }
-  .contact-btn:hover{
-    background-color: #041f38;
-  }
-  
-  .form p{
-    color: rgb(28, 27, 27);
-  }
-  .message-success{
-    color: green;
-    margin-top: 10px;
-    font-size: 20px;
-  }
-  
-  .contact-image img{
-    height: 78%;
-    width: 75%;
-    object-fit: contain;
-    margin-left: -80px;
-    
-  }
-  .contact-margin{
+
+  .contact-form {
     margin-top: 50px;
+    width: 95%; /* Full width on small screens */
+    padding: 15px;
   }
-  @media(max-width: 480px){
-    .container{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    .contact-section{
-      height: 90vh;
-      width: 100%;
-      max-width: 400px;
-      
-    }
-  
-    /* .contact-image{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-top: 90px;
-    }
-    .contact-image img{
-      height: 78%;
-      width: 75%;
-      object-fit: contain;
-      margin-left: 5px;
-      margin-right: 20px;
-      margin-top: -65px;
-      
-    } */
+
+  .contact-btn {
+    font-size: 0.85rem; /* Adjust button font size for small screens */
   }
-  
-  
-  
+
+  .contact-image img {
+    height: 70%;
+    width: 90%;
+    margin-left: 0;
+  }
+}

@@ -1,11 +1,14 @@
 // SubBlogsPage.js
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate} from 'react-router-dom';
 import './Blogs.css'; // Ensure to import the CSS file for styles
 import img from '../../Images/Courier_Delivery.png';
+import { FaArrowLeft } from 'react-icons/fa';
+
 
 const SubBlogsPage = () => {
     const { blogTitle } = useParams();
+    const navigate = useNavigate();
 
     // Define your sub-blogs and images based on the blog title
     const subBlogs = {
@@ -34,7 +37,16 @@ const SubBlogsPage = () => {
 
     const currentSubBlogs = subBlogs[blogTitle] || [];
 
+    const handleBackClick = () => {
+        navigate(-1);
+      };
+
     return (
+        <>
+              {/* Back icon */}
+  <button className="back-button" onClick={handleBackClick}>
+  <FaArrowLeft /> Back
+</button>
         <div className="sub-blogs-container">
             <h1 className="sub-blogs-title">{blogTitle.replace(/([A-Z])/g, ' $1').trim()}</h1>
             <ul className="sub-blogs-list">
@@ -49,6 +61,7 @@ const SubBlogsPage = () => {
                 ))}
             </ul>
         </div>
+        </>
     );
 };
 

@@ -13,11 +13,14 @@
         
     }
     
-    .navbar-brand {
+    .navbar-logo-toggle-icon .navbar-brand {
         padding-left: 20px;
         color: rgb(228, 225, 225);
     }
-    
+    .navbar-logo-toggle-icon .navbar-brand:hover{
+      padding-left: 20px;
+      color:  rgb(253,182,2) ;;
+  }
     .navbar {
         padding: 10px 20px;
     }

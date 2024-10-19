@@ -10,6 +10,7 @@ import Contact from "../Components/Contact/Contact";
 import Footer from "../Components/Footer/Footer";
 import Login from "../Pages/Login/Login";
 import RequireAuth from "../Pages/Login/RequireAuth";
+import OrderProcess from "../Components/OrderProcess/OrderProcess";
 
 export default function Home() {
     return(
@@ -18,8 +19,9 @@ export default function Home() {
         <Carousel/>
         <div className="content-wrapper">
         <About/>
+        <OrderProcess/>
         <CounterDisplay/>
-        <HowItWorks/>
+        {/* <HowItWorks/> */}
         <ServiceDisplay/>
         <div className="testimonial-head">
         <header className="header-testimonial text-center my-5">

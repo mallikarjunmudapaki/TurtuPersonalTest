@@ -177,7 +177,7 @@ function SignUp() {
       e.preventDefault();
     }
   };
-  // Navigate back to the previous page
+  
   const handleBackClick = () => {
     navigate(-1);
   };
@@ -195,7 +195,7 @@ function SignUp() {
 
        {!isOtpSent ? (
       <form className="signup-form" onSubmit={handleSubmit}>
-      <h2 className="signup-title">Signup</h2>
+      <h2 className="signup-title text-center">Signup</h2>
         <div className="signup-form-group">
           <div className="signup-label">
             <label>Full Name</label>

@@ -124,6 +124,7 @@ const Login = () => {
           onChange={handleChange}
           className="login-input"
           placeholder="Enter your email"
+          required
         />
         {errors.email && <p className="error-message">{errors.email}</p>}
       </div>
@@ -136,6 +137,7 @@ const Login = () => {
           onChange={handleChange}
           className="login-input"
           placeholder="Enter your password"
+          required
         />
         {errors.password && <p className="error-message">{errors.password}</p>}
       </div>

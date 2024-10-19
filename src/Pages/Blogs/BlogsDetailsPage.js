@@ -1,8 +1,8 @@
 import './Blogs.css';
-import courierservicesimg from '../../Images/CourierServices.png';
-import FoodDeliveryImg from '../../Images/FoodDeliveryImg.png';
-import PickAndDropImg from '../../Images/PickAndDropImg.png';
-import CakeDeliveryImg from '../../Images/cake.png';
+import courierservicesimg from '../../Images/Courier_Delivery.png';
+import FoodDeliveryImg from '../../Images/Food_Delivery.png';
+import PickAndDropImg from '../../Images/Pick and Drop.png';
+import CakeDeliveryImg from '../../Images/Cake_Delivery.png';
 import { Link } from "react-router-dom";
 
 export default function BlogsDetailsPage() {

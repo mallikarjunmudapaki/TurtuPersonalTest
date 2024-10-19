@@ -7,7 +7,8 @@ export default function Blogs() {
     return (
         <>
         <Header/>
-            <header className="header text-center">
+        <div className='blog-detail-section'>
+            <header className="blog-header text-center">
           <h2>Blogs</h2>
           <hr className="HLine mx-auto" />
         </header>
@@ -15,6 +16,7 @@ export default function Blogs() {
                 <BlogsDetailsPage />
             </div>
             <div className="App">  
+      </div>
       </div>
 
 

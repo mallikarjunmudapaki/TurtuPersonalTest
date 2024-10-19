@@ -1,11 +1,13 @@
 // BlogDetailArticle.js
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate} from 'react-router-dom';
 import './Blogs.css'; 
+import { FaArrowLeft } from 'react-icons/fa';
 import img from '../../Images/Courier_Delivery.png';
 
 const BlogDetailArticle = () => {
     const { blogTitle, subBlogTitle } = useParams();
+    const navigate = useNavigate();
 
     const blogContent = {
         CourierServices: {
@@ -52,8 +54,18 @@ const BlogDetailArticle = () => {
     };
 
     const content = blogContent[blogTitle]?.[subBlogTitle];
+    const handleBackClick = () => {
+        navigate(-1);
+      };
 
     return (
+        <>
+
+      {/* Back icon */}
+  <button className="back-button" onClick={handleBackClick}>
+  <FaArrowLeft /> Back
+</button>
+
         <section className="blog-detail-container">
             <div className="blog-detail-content">
                 <div className="blog-detail-header">
@@ -76,6 +88,7 @@ const BlogDetailArticle = () => {
                 )}
             </div>
         </section>
+        </>
     );
 };
 

@@ -56,7 +56,7 @@ const Carousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       handleNext();
-    }, 5000); 
+    }, 1500); 
 
     return () => clearInterval(interval); // Cleanup interval on unmount
   }, );

@@ -22,18 +22,14 @@ function App() {
         <Route index path="/" element={<Home />} />
         <Route path="/signup" element={<Signup/>}/>
         <Route path='/login' element={<Login/>}/>
-        {/* <Route path='/blog' element={<Blogs/>}/> */}
         <Route path='/career' element={<Career/>}/>
-        {/* <Route path="/BlogsDetailsPage" element={<BlogsDetailsPage/>} /> */}
-        {/* <Route path="/Blog/:title" element={<BlogDetailArticle/>} /> */}
         <Route path='/Contact' element={<ContactPage/>}/>
         <Route path='/forgot-password' element={<ForgotPassword/>}/>
         <Route path='/reset-password/:token' element={<ResetPassword/>}/>
         <Route path='/reset-password' element={<ResetPassword/>}/>
-        {/*<Route path='/dashboard' element={<Query/>}/>*/}
         <Route path="/blogs" element={<Blogs />} />
-                <Route path="/blog/:blogTitle" element={<SubBlogsPage />} />
-                <Route path="/blog/:blogTitle/:subBlogTitle" element={<BlogDetailArticle />} />
+        <Route path="/blog/:blogTitle" element={<SubBlogsPage />} />
+        <Route path="/blog/:blogTitle/:subBlogTitle" element={<BlogDetailArticle />} />
         </Routes>
         </BrowserRouter>
         </AuthProvider>
