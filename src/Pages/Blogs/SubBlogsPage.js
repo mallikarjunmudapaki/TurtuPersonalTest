@@ -2,7 +2,10 @@
 import React from 'react';
 import { useParams, Link, useNavigate} from 'react-router-dom';
 import './Blogs.css'; // Ensure to import the CSS file for styles
-import img from '../../Images/Courier_Delivery.png';
+import courierImage from '../../Images/BlogCourier.png';
+import FoodImage from '../../Images/BlogFood.png';
+import pickupImage from '../../Images/BlogPick&Drop.png';
+import CakeImage from '../../Images/BlogCake.png';
 import { FaArrowLeft } from 'react-icons/fa';
 
 
@@ -13,24 +16,20 @@ const SubBlogsPage = () => {
     // Define your sub-blogs and images based on the blog title
     const subBlogs = {
         CourierServices: [
-            { title: "Document Delivery", path: "DocumentDelivery", image: img },
-            { title: "Parcel Delivery", path: "ParcelDelivery", image: img }
+            { title: "Document Delivery", path: "DocumentDelivery", image: courierImage },
+            { title: "Parcel Delivery", path: "ParcelDelivery", image: courierImage }
         ],
         FoodDelivery: [
-            { title: "Local Restaurants", path: "LocalResturant", image: img },
-            { title: "Local Restaurant", path: "LocalResturant", image: img }
+            { title: "Local Restaurants", path: "LocalResturant", image: FoodImage },
+            { title: "Local Restaurant", path: "HomeMadeFood", image: FoodImage }
         ],
         PickAndDrop: [
-            { title: "Pick and Drop", path: "PickAndDrop", image: img },
-            { title: "Pick and Drop", path: "PickAndDrop", image: img }
+            { title: "Pick and Drop", path: "PickAndDrop", image: pickupImage },
+            { title: "Pick and Drop", path: "PickAndDrop", image: pickupImage }
         ],
         CakeDelivery: [
-            { title: "Cake Delivery", path:"CakeDelivery", image: img },
-            { title: "Cake Delivery", path: "CakeDelivery", image: img }
-        ],
-        CakeDelivery: [
-            { title: "Cake Delivery", path:"CakeDelivery", image: img },
-            { title: "Cake Delivery", path: "CakeDelivery", image: img }
+            { title: "Cake Delivery", path:"CakeDelivery", image: CakeImage},
+            { title: "Cake Delivery", path:"CakeDelivery", image: CakeImage }
         ],
     
     };

@@ -1,8 +1,8 @@
 import './Blogs.css';
-import courierservicesimg from '../../Images/Courier_Delivery.png';
-import FoodDeliveryImg from '../../Images/Food_Delivery.png';
-import PickAndDropImg from '../../Images/Pick and Drop.png';
-import CakeDeliveryImg from '../../Images/Cake_Delivery.png';
+import courierservicesimg from '../../Images/BlogCourier.png';
+import FoodDeliveryImg from '../../Images/BlogFood.png';
+import PickAndDropImg from '../../Images/BlogPick&Drop.png';
+import CakeDeliveryImg from '../../Images/BlogCake.png';
 import { Link } from "react-router-dom";
 
 export default function BlogsDetailsPage() {
@@ -55,6 +55,7 @@ export default function BlogsDetailsPage() {
                     <div className="container">
                         {blogData.map((blog, index) => (
                             <div className="col mt-2" key={index}>
+                                <Link to={`/blog/${blog.path}`}>
                                 <div className="card shadow">
                                     <img src={blog.image} alt="" className="card-img-top" />
                                     <div className="card-body">
@@ -66,6 +67,7 @@ export default function BlogsDetailsPage() {
                                         </div>
                                     </div>
                                 </div>
+                                </Link>
                             </div>
                         ))}
                     </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CourierServicesImg from '../../Images/Courier_Delivery.png';
+import CourierServicesImg from '../../Images/BlogCourier.png';
 import FoodDeliveryImg from '../../Images/Food_Delivery.png';
 import CakeDeliveryImage from '../../Images/Cake_Delivery.png';
 import GiftDeliveryImage from '../../Images/Gift Delivery.png';
