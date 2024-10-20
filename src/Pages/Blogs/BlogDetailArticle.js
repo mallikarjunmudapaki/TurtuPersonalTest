@@ -22,7 +22,7 @@ const BlogDetailArticle = () => {
             }
         },
         FoodDelivery: {
-            LocalResturant1: {
+            LocalResturant: {
                 image: img,
                 description: "Experience the best of local cuisine from the comfort of your home. Our local restaurant food delivery service brings freshly prepared meals from your favorite restaurants right to your doorstep. Satisfy your cravings without leaving the house with fast and convenient delivery."
             },
