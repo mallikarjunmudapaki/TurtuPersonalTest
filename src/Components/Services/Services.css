@@ -13,7 +13,7 @@
     border-radius: 10px;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 20px; /* Adding padding inside each service */
+    padding: 20px;
   }
   
   .service-box:hover {
@@ -64,8 +64,6 @@
       opacity: 1;
     }
   }
-  
-  /* Responsive Design */
   @media (max-width: 768px) {
     .header-service {
       margin-top: 10px !important;

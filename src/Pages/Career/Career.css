@@ -1,25 +1,22 @@
-/* Career Heading */
 .career-heading {
   text-align: center;
   margin-bottom: 20px;
   color: #343a40;
-  font-size: 24px; /* Reduced font size for consistency */
+  font-size: 24px;
  
 }
-
-/* Career Section */
 .career-section {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #f4f4f4;
   height: 100vh; 
+  padding: 20px;
 }
 
-/* Career Form */
 .career-form {
   width: 100%;
-  max-width: 400px; /* Reduced width for a compact form */
+  max-width: 400px;
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -27,24 +24,21 @@
   margin: 0 auto;
 }
 
-/* Input Field */
 .input-field {
-  margin-top: 15px; /* Reduced margin between fields */
+  margin-top: 15px; 
 }
 
-/* Input Label */
 .input-label {
   display: block;
-  margin-bottom: 5px; /* Reduced space between label and input */
+  margin-bottom: 5px;
   font-weight: 500;
   color: #495057;
-  font-size: 14px; /* Consistent label size */
+  font-size: 14px;
 }
 
-/* Input Field Element */
 .input-field-element {
   width: 100%;
-  padding: 10px; /* Reduced padding */
+  padding: 10px;
   border: 1px solid #ced4da;
   border-radius: 5px;
   box-sizing: border-box;
@@ -59,31 +53,29 @@
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
 }
 
-/* Error and Success Messages */
 .error-message {
   color: #c72030;
-  font-size: 12px; /* Reduced font size for error message */
+  font-size: 12px; 
   margin-top: 5px;
 }
 
 .success-message {
   color: #28a745;
-  font-size: 14px; /* Consistent font size */
+  font-size: 14px;
   margin-top: 10px;
   text-align: center;
 }
 
-/* Submit Button */
 .career-btn {
   background-color: #02101D;
   color: #ffffff;
-  padding: 10px 15px; /* Reduced padding */
+  padding: 10px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 15px; /* Consistent font size for button */
+  font-size: 15px;
   width: 100%;
-  margin-top: 20px; /* Reduced margin for a more compact form */
+  margin-top: 20px;
   transition: background-color 0.3s ease;
 }
 
@@ -91,17 +83,16 @@
   background-color: #041f38;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 600px) {
   .career-form {
-    padding: 25px; /* Adjusted padding for mobile */
+    padding: 25px;
   }
 
   .career-heading {
-    font-size: 20px; /* Smaller heading for mobile */
+    font-size: 20px; 
   }
 
   .career-btn {
-    font-size: 14px; /* Adjusted button font size for smaller screens */
+    font-size: 14px;
   }
 }

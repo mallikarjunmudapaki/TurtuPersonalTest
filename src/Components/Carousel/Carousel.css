@@ -94,7 +94,6 @@
     background-color: rgba(0, 0, 0, 0.7);
   }
   
-  /* Responsive Design */
   @media (max-width: 768px) {
     .carousel-container {
       grid-template-columns: 1fr;

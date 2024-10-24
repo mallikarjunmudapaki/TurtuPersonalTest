@@ -1,3 +1,48 @@
+.download-link {
+  margin-top: 10px;
+  color: white;
+  text-decoration: underline;
+}
+.resume-button {
+  display: inline-block;
+  padding: 8px 12px;
+  margin: 10px 5px;
+  font-size: 12px;
+  font-weight: 500;
+  text-align: center;
+  color: #fff;
+  background-color: #072c54; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none; 
+}
+.resume-button:hover {
+  background-color: #0056b3; 
+}
+
+.resume-button:active {
+  transform: scale(0.98); 
+}
+
+.download-button {
+  background-color: #28a745; 
+}
+
+.download-button:hover {
+  background-color: #218838;
+}
+
+.resume-button span {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.resume-button .icon {
+  margin-right: 8px; 
+}
+
 .admin-dashboard-container {
   padding: 20px;
   font-family: Arial, sans-serif;
@@ -95,14 +140,13 @@
 }
 
 .c-table-header-cell {
-  width: 10%;
+  width: 12%;
 }
 
 .query {
   width: 25%;
 }
 
-/* Main filter input styling */
 .filter-input {
   padding: 8px;
   width: 100%;
@@ -112,7 +156,6 @@
   margin-right: 10px;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
   .tabs-container {
     flex-direction: column;
@@ -125,11 +168,10 @@
     max-width: 250px;
   }
 
-  /* Make filter input the same width as the tab buttons */
   .filter-input {
     width: 100%;
     max-width: 250px;
-    margin: 10px 0; /* Add margin for spacing */
+    margin: 10px 0;
   }
 
   .table-wrapper {
@@ -173,10 +215,9 @@
     margin: 5px 0;
   }
 
-  /* Match search bar width to tab buttons on smaller screens */
   .filter-input {
     width: 100%;
-    margin: 5px 0; /* Add margin for spacing */
+    margin: 5px 0;
   }
 
   .custom-table th,

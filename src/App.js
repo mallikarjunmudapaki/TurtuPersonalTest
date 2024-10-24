@@ -7,11 +7,11 @@ import Blogs from './Pages/Blogs/Blogs.js';
 import { AuthProvider } from './Pages/Login/AuthContext.js';
 import Career from './Pages/Career/Career.js';
 import BlogDetailArticle from './Pages/Blogs/BlogDetailArticle.js';
-import BlogsDetailsPage from './Pages/Blogs/BlogsDetailsPage.js';
 import ContactPage from './Pages/Contact/ContactPage.js';
 import ForgotPassword from './Pages/forgotPassword/ForgotPassword.js';
 import ResetPassword from './Pages/forgotPassword/ResetPassword.js';
 import SubBlogsPage from './Pages/Blogs/SubBlogsPage.js';
+import Query from './Components/AdminDashboard/Query/Query.js';
 
 function App() {
   return (
@@ -30,6 +30,7 @@ function App() {
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blog/:blogTitle" element={<SubBlogsPage />} />
         <Route path="/blog/:blogTitle/:subBlogTitle" element={<BlogDetailArticle />} />
+        <Route path="/dashboard" element={<Query/>}/>
         </Routes>
         </BrowserRouter>
         </AuthProvider>

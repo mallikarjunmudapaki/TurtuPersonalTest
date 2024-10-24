@@ -1,8 +1,8 @@
-/* Contact Section */
+
 .contact {
   padding-top: 40px;
   background-color: #f4f4f4;
-  height: 90vh; /* Adjust to fit the screen */
+  height: 90vh; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,9 +16,9 @@
   padding-bottom: 7px;
 }
 
-/* Contact Form Container */
+
 .contact-form {
-  max-width: 350px; /* Reduced the width for a compact design */
+  max-width: 350px; 
   margin: 0 auto;
   background: white;
   border-radius: 10px;
@@ -26,14 +26,13 @@
   padding: 20px;
 }
 
-/* Contact Form Title */
+
 .contact-form > h2 {
   text-align: center;
-  font-size: 24px; /* Reduced font size */
+  font-size: 24px;
   margin-bottom: 20px;
 }
 
-/* Input Fields */
 .contact-input {
   width: 100%;
   padding: 8px;
@@ -47,12 +46,10 @@
   font-size: 12px; 
 }
 
-/* Input Labels */
 .contact-input-field > label {
   font-size: 14px; 
 }
 
-/* Submit Button */
 .contact-btn {
   padding: 10px;
   width: 100%;
@@ -60,7 +57,7 @@
   color: white;
   border: none;
   border-radius: 5px;
-  font-size: 0.9rem; /* Reduced button font size */
+  font-size: 0.9rem; 
   cursor: pointer;
 }
 
@@ -68,14 +65,12 @@
   background-color: #041f38;
 }
 
-/* Success Message */
 .message-success {
   color: green;
   margin-top: 10px;
-  font-size: 16px; /* Reduced success message size */
+  font-size: 16px; 
 }
 
-/* Container for Image (if used) */
 .contact-image img {
   height: 78%;
   width: 75%;
@@ -83,12 +78,10 @@
   margin-left: -80px;
 }
 
-/* Margin for spacing */
 .contact-margin {
   margin-top: 50px;
 }
 
-/* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .contact-form {
     margin-top: 30px;
@@ -111,18 +104,18 @@
   .contact-section {
     height: 85vh;
     width: 100%;
-    max-width: 350px; /* Reduced width for mobile */
+    max-width: 350px;
     padding-bottom: 60px;
   }
 
   .contact-form {
     margin-top: 50px;
-    width: 95%; /* Full width on small screens */
+    width: 95%;
     padding: 15px;
   }
 
   .contact-btn {
-    font-size: 0.85rem; /* Adjust button font size for small screens */
+    font-size: 0.85rem;
   }
 
   .contact-image img {

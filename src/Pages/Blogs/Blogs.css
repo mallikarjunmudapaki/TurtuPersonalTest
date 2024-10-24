@@ -1,7 +1,6 @@
-/* Blogs.css */
+
 .sub-blogs-container {
   padding: 40px;
-  /* max-width: 1200px; */
   margin: 0 auto;
   text-align: center;
 }
@@ -47,8 +46,6 @@
 }
 
 .sub-blog-image {
-  /* width: 100%;
-  max-width: 200px; */
   height: 200px;
   border-radius: 10px;
   margin-bottom: 15px;
@@ -71,9 +68,6 @@
   color: white;
 }
 
-/* Blogs.css */
-
-/* Blog Detail Article Container */
 .blog-detail-container {
   background-color: #f5f5f5;
   display: flex;
@@ -87,7 +81,6 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Blog Detail Content Wrapper */
 .blog-detail-content {
   text-align: center;
   padding: 20px;
@@ -95,7 +88,6 @@
   border-radius: 10px;
 }
 
-/* Blog Detail Header */
 .blog-detail-header {
   text-align: center;
   margin-bottom: 20px;
@@ -116,7 +108,6 @@
   margin: 10px auto;
 }
 
-/* Blog Article Content */
 .blog-detail-article {
   text-align: center;
   width: 850px;
@@ -139,7 +130,6 @@
   text-align: justify;
 }
 
-/* Not Found Message */
 .blog-detail-not-found {
   font-size: 1.5em;
   color: red;
@@ -148,15 +138,12 @@
   margin-top: 30px;
 }
 
-
-
 .blogs-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 80%;
-  /*margin: 0 auto;*/
 }
 
 .blogs {
@@ -269,14 +256,11 @@
   }
 
   .blogs-section {
-
     width: 90%;
-    /*margin: 0 auto;*/
   }
 
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
   .blog-detail-container {
     padding: 10px;

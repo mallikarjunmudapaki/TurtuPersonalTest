@@ -74,7 +74,7 @@ const navigate = useNavigate();
     formDataToSubmit.append('resume', formData.resume_filename);
 
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/career`, formDataToSubmit, {
+      const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/user/career`, formDataToSubmit, {
         headers: {
           'Content-Type': 'multipart/form-data',
           'Authorization': `Bearer ${token}`, 

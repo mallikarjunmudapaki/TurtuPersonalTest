@@ -56,10 +56,9 @@
     color: #555;
   }
   
-  /* Responsive Design */
   @media (max-width: 768px) {
     .about-row {
-      flex-direction: column; /* Stack vertically on small screens */
+      flex-direction: column;
       text-align: center;
     }
     .about-heading{

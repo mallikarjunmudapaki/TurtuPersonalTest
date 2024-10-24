@@ -69,16 +69,13 @@ const ServicePage = () => {
   return (
     <div className="wrapper">
     <div className="container service-page" id='services'>
-      {/* Row to hold 2 services per row with a gap */}
       <div className="row">
         {services.map((service) => (
           <div key={service.id} className="col-md-6 g-5">
             <div className="row service-box">
-              {/* Left Column: Image */}
               <div className="col-md-5">
                 <img src={service.image} className="img-fluid service-img" alt={service.heading} />
               </div>
-              {/* Right Column: Content */}
               <div className="col-md-7 d-flex flex-column justify-content-center">
                 <h5 className="service-heading">{service.heading}</h5>
                 <p className="service-text">{service.text}</p>

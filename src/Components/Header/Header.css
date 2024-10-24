@@ -1,4 +1,3 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');*/
 .navbar{
     background-color: #02101d;
     
@@ -32,17 +31,15 @@
     .navbar-toggler-icon {
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%2880,80,80,0.7%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     }
-    /* Header.css */
   
   .profile-icon {
-    color: #007bff; /* Adjust the icon color */
+    color: #007bff;
     cursor: pointer;
   }
   
   .dropdown-menu {
-    right: 0; /* Align dropdown menu to the right */
+    right: 0;
   }
-  /* Header.css */
 .disabled-link {
     pointer-events: none;
     opacity: 0.5;
@@ -54,7 +51,7 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1050; /* Ensure the alert is on top of other elements */
+    z-index: 1050;
   }
   .nav-item > button{
     color: rgb(228, 225, 225);
@@ -63,7 +60,6 @@
   .nav-item > button:hover{
     color: rgb(228, 225, 225);
   }
-  /*modal*/
   .modal-body {
     padding: 2rem;
   }
@@ -96,18 +92,18 @@
   .profile-icon{
     color: rgb(228, 225, 225);
   }
-  /* Custom size for login modal */
+ 
 .login-modal .modal-dialog.modal-sm {
     max-width: 400px; 
 }
 .login-modal .modal-content {
-    height: 540px; /* Adjust modal height */
-    margin: auto;  /* Center the modal vertically */
+    height: 540px; 
+    margin: auto; 
     display: flex;
     justify-content: center;
     padding-top: 0px;
 }
-/* Ensure proper padding and alignment */
+
 .login-modal .modal-body {
     padding: 1rem;
     display: flex;
@@ -118,7 +114,6 @@
     
 }
 
-/* Close button styling */
 .login-modal .modal-header {
     padding: 0.5rem;
     display: flex;

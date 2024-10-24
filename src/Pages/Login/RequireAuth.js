@@ -1,4 +1,4 @@
-// src/RequireAuth.js
+
 import React from 'react';
 import { useAuth } from './AuthContext';
 import { useNavigate } from 'react-router-dom';
@@ -6,8 +6,6 @@ import { useNavigate } from 'react-router-dom';
 const RequireAuth = ({ children }) => {
   const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
-
-  // If user is not authenticated, prompt to log in or redirect to the login page
   if (!isAuthenticated) {
     return (
       <div className="auth-prompt">
@@ -17,8 +15,6 @@ const RequireAuth = ({ children }) => {
       </div>
     );
   }
-
-  // Render children if authenticated
   return children;
 };
 

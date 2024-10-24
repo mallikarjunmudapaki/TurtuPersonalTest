@@ -5,11 +5,11 @@ import './Header.css';
 import { FaUserCircle } from 'react-icons/fa';
 
 export default function Header() {
-  // Existing state and hooks
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userEmail, setUserEmail] = useState('');
   const [showProfileModal, setShowProfileModal] = useState(false);
   const [userName, setUserName] = useState('');
+  const [userPhoneNumber,setUserPhoneNumber]=useState('');
   const [profileImage, setProfileImage] = useState(null);
   const navigate = useNavigate();
 
@@ -20,6 +20,7 @@ export default function Header() {
       const decodedToken = JSON.parse(atob(token.split('.')[1]));
       setUserEmail(decodedToken.email || 'user@example.com');
       setUserName(decodedToken.username || 'username');
+      setUserPhoneNumber(decodedToken.phonenumber || '1234567890')
     }
   }, []);
 
@@ -39,13 +40,12 @@ export default function Header() {
     }
   };
 
-  // Function to handle file input change
   const handleProfileImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setProfileImage(reader.result); // Set the image preview
+        setProfileImage(reader.result);
       };
       reader.readAsDataURL(file);
     }
@@ -56,7 +56,7 @@ export default function Header() {
       <nav className="navbar navbar-expand-lg navbar-light fixed-top">
         <div className="container-fluid">
           <div className="navbar-logo-toggle-icon">
-            <a className="navbar-brand fs-2 fw-bold" href="#home">
+            <a className="navbar-brand fs-2 fw-bold" href="/">
               Turtu
             </a>
             <button
@@ -143,7 +143,6 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* Profile Modal */}
       {showProfileModal && (
         <div
           className="modal fade show d-block"
@@ -165,7 +164,7 @@ export default function Header() {
                 ></button>
               </div>
               <div className="modal-body text-center">
-                {/* Display uploaded profile image or default icon */}
+               
                 {profileImage ? (
                   <img
                     src={profileImage}
@@ -195,7 +194,6 @@ export default function Header() {
                   onChange={handleProfileImageChange}
                 />
 
-                {/* Remove Image Button */}
                 {profileImage && (
                   <button
                     className="btn btn-danger mt-2"
@@ -206,7 +204,8 @@ export default function Header() {
                 )}
 
                 <h4>{userName}</h4>
-                <h6>{userEmail}</h6>
+                <h6><span className='login-data'>Email: </span>{userEmail}</h6>
+                <h6><span className='login-data'>Phone Number: </span>{userPhoneNumber}</h6>
                 <button className="logout-btn" onClick={handleLogout}>
                   Logout
                 </button>

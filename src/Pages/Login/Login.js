@@ -13,24 +13,20 @@ const Login = () => {
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState('');
   const navigate = useNavigate();
-  // Handle input change
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    setErrors({ ...errors, [e.target.name]: '' }); // Clear error on input change
+    setErrors({ ...errors, [e.target.name]: '' });
   };
 
-  // Validate form fields
   const validateForm = () => {
     const newErrors = {};
 
-    // Email validation
     if (!formData.email) {
       newErrors.email = 'Email is required.';
     } else if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formData.email)) {
       newErrors.email = 'Invalid email address.';
     }
 
-    // Password validation
     if (!formData.password) {
       newErrors.password = 'Password is required.';
     } else if (formData.password.length < 6) {
@@ -42,13 +38,13 @@ const Login = () => {
   };
 
   const verifyToken = async () => {
-    const token = localStorage.getItem('authToken'); // Fetch token from local storage
+    const token = localStorage.getItem('authToken'); 
     if (!token) {
       console.error('No token found!');
       return;
     }
     try {
-      const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/verify`, {
+      const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/auth/verify`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -56,7 +52,6 @@ const Login = () => {
 
       if (response.status === 200) {
         console.log('Token is valid!', response.data);
-        // Proceed to navigate to the home or dashboard page
       }
     } catch (error) {
       console.error('Token verification failed:', error.response?.data?.message || error.message);
@@ -71,7 +66,7 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/login`, formData, {
+      const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/auth/login`, formData, {
         headers: {
           'Content-Type': 'application/json',
         },
@@ -81,11 +76,9 @@ const Login = () => {
         const { token } = response.data.data;
         localStorage.setItem('authToken', token);
         setSuccessMessage('Login successful!');
-
-        // Verify the token
         await verifyToken(token);
 
-        window.location.href = '/'; // Redirect after successful verification
+        window.location.href = '/';
       }
     } catch (error) {
       if (error.response) {
@@ -101,14 +94,12 @@ const Login = () => {
       }
     }
   };
- // Navigate back to the previous page
  const handleBackClick = () => {
   navigate(-1);
 };
   return (
     <>
     <section className="login-wrapper">
-       {/* Back icon */}
   <button className="back-button" onClick={handleBackClick}>
             <FaArrowLeft /> Back
           </button>

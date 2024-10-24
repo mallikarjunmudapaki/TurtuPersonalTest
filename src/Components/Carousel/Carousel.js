@@ -8,7 +8,6 @@ import CakeDeliveryImg from '../../Images/CakeDelivery.png';
 const Carousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // Carousel items with content and image features
   const carouselItems = [
     {
       heading: "Send Any documents or packages anywhere in city limits",
@@ -40,12 +39,10 @@ const Carousel = () => {
     }
   ];
 
-  // Function to handle next slide
   const handleNext = () => {
     setActiveIndex((prevIndex) => (prevIndex + 1) % carouselItems.length);
   };
 
-  // Function to handle previous slide
   const handlePrev = () => {
     setActiveIndex((prevIndex) =>
       prevIndex === 0 ? carouselItems.length - 1 : prevIndex - 1
@@ -58,7 +55,7 @@ const Carousel = () => {
       handleNext();
     }, 1500); 
 
-    return () => clearInterval(interval); // Cleanup interval on unmount
+    return () => clearInterval(interval); 
   }, );
 
   const handleWhatsAppClick = () => {

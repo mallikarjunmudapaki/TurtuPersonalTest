@@ -24,17 +24,14 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
   
-    // Validate form inputs
     const errors = validate(formValues);
     setFormErrors(errors);
-  
-    // If no validation errors, proceed with form submission
+
     if (Object.keys(errors).length === 0) {
       try {
-        // Submit the form values to the backend
         await axios.post(
           
-          `${process.env.REACT_APP_API_BASE_URL}/api/contact`, // Replace with your actual backend endpoint
+          `${process.env.REACT_APP_API_BASE_URL}/api/user/contact`, 
           formValues,
           {
             headers: {
@@ -43,19 +40,16 @@ export default function Contact() {
           }
         );
   
-        // Clear the form and show success message
         setFormValues({ username: '', email: '', phone_number: '', queries: '' });
         setIsSuccess(true);
         setMessage('Your message has been sent! A confirmation email has been sent to you.');
   
-        // Hide the success message after 5 seconds and reset the message state
         setTimeout(() => {
           setIsSuccess(false);
-          setMessage(''); // Clear the message to prevent it from showing again
-        }, 5000); // Hide success message after 5 seconds
+          setMessage(''); 
+        }, 5000); 
   
       } catch (error) {
-        // Handle errors during submission
         console.error('Error during form submission:', error);
         if (error.response) {
           setMessage(`Error: ${error.response.data.message || 'Failed to submit the form.'}`);

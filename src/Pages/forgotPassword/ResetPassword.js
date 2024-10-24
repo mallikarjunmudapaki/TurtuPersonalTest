@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom'; // useParams for getting token from URL
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Forgot_Reset_Password.css';
 
@@ -8,7 +8,7 @@ export default function ResetPassword() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
-  const { token } = useParams(); // Extract token from URL params
+  const { token } = useParams();
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -18,7 +18,7 @@ export default function ResetPassword() {
       setError('Passwords do not match');
       return;
     }
-    axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/reset_password/${token}`, { 
+    axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/auth/reset-password/${token}`, { 
       password, 
       confirm_password: confirmPassword
   }, {
@@ -32,12 +32,12 @@ export default function ResetPassword() {
         setTimeout(() => navigate('/login'), 3000); 
       })
       .catch(err => {
-        console.error('Error during password reset:', err); // Log the error for debugging
+        console.error('Error during password reset:', err);
         setError(err.response.data.message || 'Failed to reset password. Invalid or expired token.');
         setMessage('');
       });
   };
-  console.log(`${process.env.REACT_APP_API_BASE_URL}/api/reset_password/${token}`);
+  console.log(`${process.env.REACT_APP_API_BASE_URL}/api/auth/reset-password/${token}`);
   return (
     <div className="reset-password-container">
       <form className="reset-password-form" onSubmit={handleSubmit}>

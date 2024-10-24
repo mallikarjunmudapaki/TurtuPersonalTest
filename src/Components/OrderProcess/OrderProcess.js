@@ -24,29 +24,15 @@ const OrderProcess = () => {
   <div className="step" style={{ '--delay': '0s' }}>
     <img src={PlaceOrder} alt="Place Your Order" />
     <h3>Place Your Order</h3>
-    {/* <p>Select your items and proceed to checkout.</p> */}
   </div>
-
-  {/* <div className="empty-space" style={{ '--delay': '0.5s' }}>
-    <span className="icon">🛒</span>
-    <span className="description">Next: Delivery Hero Assigned</span>
-  </div> */}
 
   <div className="step" style={{ '--delay': '1s' }}>
     <img src={AssignDeliveryHero} alt="Delivery Hero Assigned" />
     <h3>Delivery Hero Assigned</h3>
-    {/* <p>Your delivery is on its way!</p> */}
   </div>
-
-  {/* <div className="empty-space" style={{ '--delay': '1.5s' }}>
-    <span className="icon">🚚</span>
-    <span className="description">Next: Order Delivered</span>
-  </div> */}
-
   <div className="step" style={{ '--delay': '2s' }}>
     <img src={DeliveredOrder} alt="Order Delivered" />
     <h3>Order Delivered</h3>
-    {/* <p>Enjoy your item delivered to your doorstep!</p> */}
   </div>
 </div>
 </>

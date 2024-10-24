@@ -1,14 +1,12 @@
-/* Container for form */
 .login-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background-color: #f4f4f4;
-  padding: 20px; /* Added padding for better spacing on smaller screens */
+  padding: 20px; 
 }
 
-/* Form container */
 .login-container {
   background-color: #ffffff;
   display: flex;
@@ -16,25 +14,23 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: 350px; /* Consistent width with signup form */
-  padding: 20px; /* Reduced padding for a cleaner look */
-  border-radius: 10px; /* Slightly reduced border radius */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Softened shadow */
+  max-width: 350px; 
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
   margin: auto;
   position: relative;
   z-index: 1;
 }
 
-/* Form title */
 .login-title {
   margin-bottom: 15px;
   color: #333;
-  font-size: 22px; /* Consistent font size with signup form */
+  font-size: 22px; 
   text-align: center;
-  font-weight: 600; /* Slightly lighter font weight */
+  font-weight: 600; 
 }
 
-/* Form styling */
 .login-form {
   display: flex;
   flex-direction: column;
@@ -43,30 +39,29 @@
 
 .login-input {
   width: 100%;
-  padding: 10px; /* Consistent padding with signup */
-  margin-bottom: 15px; /* Reduced margin between inputs */
-  border-radius: 5px; /* Consistent border radius */
+  padding: 10px; 
+  margin-bottom: 15px; 
+  border-radius: 5px;
   border: 1px solid #ced4da;
-  font-size: 14px; /* Adjusted font size for consistency */
+  font-size: 14px;
   transition: border-color 0.3s ease-in-out;
 }
 .form-group > label{
   font-size: 14px;
 }
 .login-input:focus {
-  border-color: #80bdff; /* Focus effect for inputs */
+  border-color: #80bdff;
   outline: none;
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
 }
 
-/* Button styling */
 .login-button {
   padding: 12px;
   background-color: #02101D;
   color: white;
-  font-size: 16px; /* Adjusted font size */
+  font-size: 16px;
   border: none;
-  border-radius: 5px; /* Consistent border radius */
+  border-radius: 5px; 
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -75,13 +70,11 @@
   background-color: #041f38;
 }
 
-/* Error message styling */
 .error-message {
   color: #c72030;
-  font-size: 12px; /* Reduced size for better readability */
+  font-size: 12px;
 }
 
-/* Success message styling */
 .success-message {
   color: green;
   font-size: 14px;
@@ -89,10 +82,9 @@
   text-align: center;
 }
 
-/* Additional Links (forgot password, signup) */
 .login-links {
   text-align: center;
-  margin-top: 15px; /* Adjusted spacing for consistency */
+  margin-top: 15px; 
 }
 .login-links >p{
   font-size: 14px;
@@ -102,7 +94,7 @@
   cursor: pointer;
   margin-bottom: 8px;
   display: inline-block;
-  font-size: 14px; /* Adjusted font size */
+  font-size: 14px;
 }
 
 .forgot-password:hover {
@@ -112,14 +104,13 @@
 .signup-link {
   color: rgb(253, 182, 2);
   cursor: pointer;
-  font-size: 14px; /* Consistent font size */
+  font-size: 14px;
 }
 
 .signup-link:hover {
   text-decoration: underline;
 }
 
-/* Responsive design */
 @media (max-width: 1024px) {
   .login-wrapper {
     flex-direction: column;
@@ -133,12 +124,12 @@
 @media (max-width: 768px) {
   .login-container {
     width: 85%;
-    padding: 20px; /* Adjusted padding for mobile */
+    padding: 20px;
   }
 
   .login-title {
     margin-bottom: 10px;
     margin-top: 10px;
-    font-size: 20px; /* Adjusted title font size for smaller screens */
+    font-size: 20px;
   }
 }

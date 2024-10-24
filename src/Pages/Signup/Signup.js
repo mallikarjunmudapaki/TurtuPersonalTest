@@ -24,6 +24,7 @@ function SignUp() {
   });
 
   const [submissionStatus, setSubmissionStatus] = useState('');
+  const [isError, setIsError] = useState(false);
   const [otp, setOtp] = useState('');
   const [isOtpSent, setIsOtpSent] = useState(false);
   const [resendOtpStatus, setResendOtpStatus] = useState(''); // New state for resend OTP status
@@ -101,7 +102,7 @@ function SignUp() {
     if (validate()) {
       try {
         const response = await axios.post(
-          `${process.env.REACT_APP_API_BASE_URL}/api/register`, 
+          `${process.env.REACT_APP_API_BASE_URL}/api/auth/register`, 
           formData,
           { headers: { 'Content-Type': 'application/json' } }
         );
@@ -109,14 +110,15 @@ function SignUp() {
         if (response.data.status === 'success') {
           setIsOtpSent(true);
           setSubmissionStatus('OTP has been sent to your email. Please enter it to verify your account.');
-          
+          setIsError(false); 
         } else {
           setSubmissionStatus(response.data.message);
+          setIsError(true);
           
         }
       } catch (error) {
         setSubmissionStatus('Failed to submit the form. Please try again.');
-       
+        setIsError(true);
       }
     }
   };
@@ -124,16 +126,17 @@ function SignUp() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_BASE_URL}/api/verify_otp`, 
+        `${process.env.REACT_APP_API_BASE_URL}/api/auth/verify-otp`, 
         JSON.stringify({
-          email: formData.email,  // Use the email from the formData
-          otp: otp  // OTP entered by the user
+          email: formData.email,
+          otp: otp  
         }), 
         { headers: { 'Content-Type': 'application/json' } }
       );
   
       if (response.data.status === 'success') {
-        setSubmissionStatus('Email verified essfully! Redisuccrecting to login page...');
+        setSubmissionStatus('Email verified successfully! Redisuccrecting to login page...');
+        setIsError(false);
         setTimeout(() => {
           navigate('/Login');
         }, 3000);
@@ -142,6 +145,7 @@ function SignUp() {
       }
     } catch (error) {
       setSubmissionStatus('Failed to verify OTP. Please try again.');
+      setIsError(true);
     }
   };
   
@@ -151,7 +155,7 @@ function SignUp() {
 
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_BASE_URL}/api/resend_otp`, 
+        `${process.env.REACT_APP_API_BASE_URL}/api/auth/resend-otp`, 
         JSON.stringify({
           email: formData.email,
         }), 
@@ -160,11 +164,14 @@ function SignUp() {
 
       if (response.data.status === 'success') {
         setResendOtpStatus('OTP has been resent to your email.');
+        setIsError(false);
       } else {
         setResendOtpStatus(response.data.message);
+        setIsError(true);
       }
     } catch (error) {
       setResendOtpStatus('Failed to resend OTP. Please try again.');
+      setIsError(true);
     }
     
     setIsResendingOtp(false);
@@ -196,6 +203,13 @@ function SignUp() {
        {!isOtpSent ? (
       <form className="signup-form" onSubmit={handleSubmit}>
       <h2 className="signup-title text-center">Signup</h2>
+      {submissionStatus && (
+                <p
+                  className={isError ? 'error-text' : 'success-text'}
+                >
+                  {submissionStatus}
+                </p>
+              )}
         <div className="signup-form-group">
           <div className="signup-label">
             <label>Full Name</label>
@@ -276,7 +290,7 @@ function SignUp() {
           {formErrors.confirm_password && <div className="signup-error">{formErrors.confirm_password}</div>}
         </div>
         <button className="signup-button" type="submit">Sign Up</button>
-        {submissionStatus && <div className="signup-success">{submissionStatus}</div>}
+        {/* {submissionStatus && <div className="signup-success">{submissionStatus}</div>} */}
         <div className='signup-text'>
           <p>Already have an account?</p>
           <Link to={`/Login`} className='login-text'><span>Login</span></Link>
