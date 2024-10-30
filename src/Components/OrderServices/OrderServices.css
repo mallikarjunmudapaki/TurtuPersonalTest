@@ -1,0 +1,37 @@
+.oM-header-home{
+    text-align: center;
+}
+.oM-home-conatiner{
+    margin-bottom:100px;
+}
+.oM-home-services{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.oM-TopConatiner,.oM-lowerConatiner{
+    display: flex;
+}
+
+
+@media (max-width:1000px) {
+    .oM-TopConatiner,.oM-lowerConatiner{
+        display: block;
+    }  
+    
+}
+@media (max-width:700px) {
+    .oM-TopConatiner,.oM-lowerConatiner{
+        display: block;
+       
+    }  
+    
+    
+}
+
+
+
+
+

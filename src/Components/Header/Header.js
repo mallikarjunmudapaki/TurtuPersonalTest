@@ -75,7 +75,14 @@ export default function Header() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <div className="navbar-nav ms-auto mb-2 mb-lg-0">
               <div className="nav-item">
-                <div className="nav-link active">
+                <div className="nav-link">
+                  <Link to="/team-Login" smooth className="navigation">
+                    Work With Us
+                  </Link>
+                </div>
+              </div>
+              <div className="nav-item">
+                <div className="nav-link">
                   <Link to="/#home" smooth className="navigation">
                     Home
                   </Link>

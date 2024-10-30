@@ -1,0 +1,428 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  .loading-overlay {
+    position: fixed; /* Position it relative to the viewport */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Stretch to the right */
+    bottom: 0; /* Stretch to the bottom */
+    background-color: #fff; /* Semi-transparent background */
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 9999; /* Ensure it is on top of all other elements */
+    font-size: 24px; /* Font size */
+    color: #333; /* Text color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional shadow for depth */
+  }
+  
+  .loading-video {
+    width: 200px; 
+    height: auto; 
+    border: none; 
+    background-color: transparent; 
+  }
+  
+  .d-container-caller {
+    padding: 20px;
+    background: linear-gradient(to right, #9fcfef, #6fbfde, #4baed1, #2d9fc6, #1b8dbb);
+    color: #333;
+    
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 10px auto;
+  }
+  
+  .d-order-id,
+  .d-order-details-main{
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .d-order-id{
+    text-align: center;
+  }
+  .d-order-details-main{
+   
+  height: 100%;
+  }
+  .d-order-history-details{
+    height: 80%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  /* Order ID */
+  .d-order-id-number,
+  .d-order-id-date {
+    text-align: center;
+  }
+  
+  .d-order-id-number {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  .d-order-id-date {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .d-order-info{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+   
+  }
+  
+  .d-due-time {
+    font-size: 14px;
+    color: #ff6347; /* Tomato color for urgency */
+  }
+  .d-orderCustomerName{
+    font-size: 15px;
+  }
+  
+  .d-order-title {
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Order Address */
+  .d-order-address {
+    display: flex;
+    flex-direction: column;
+    background-color: white; 
+    gap: 10px; 
+  }
+ 
+  
+  /* Pickup and Drop Containers */
+  .d-pickup-container,
+  .d-drop-container {
+    background-color: #cedce9;
+    border-radius: 10px; 
+    padding: 15px; 
+    position: relative; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 2px; 
+  }
+  
+  /* Pickup and Drop Details */
+  .d-pickup-details,
+  .d-drop-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Gap between elements inside the pickup and drop details */
+  }
+  
+  /* Location Details */
+  .d-location-details {
+    display: flex;
+    justify-content: space-between; /* Space between details and call icon */
+    align-items: center; 
+  }
+  
+  /* Details Structure */
+  .d-details {
+    flex-grow: 1; 
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+  }
+  
+  .d-details-text {
+    max-width: 70%;
+  }
+  
+  .d-label {
+    font-size: 14px;
+    color: #6c757d; 
+  }
+  
+  .d-location-name {
+    font-size: 12px; 
+    font-weight: bold; 
+    color: #333; 
+  }
+  
+  .d-address {
+    font-size: 14px; 
+    color: #555; 
+    line-height: 1.4; 
+  }
+  
+  /* Call Icon Style */
+  .d-call-icon {
+    padding: 5px 8px; 
+    background-color: #28a745; 
+    color: #fff; 
+    border-radius: 5px; 
+    font-size: 20px; 
+    cursor: pointer; 
+    white-space: nowrap; 
+  }
+  
+  
+  /* Other Details */
+  .d-other-details {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .d-instructions-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .d-instructions-content,
+  .d-instructions-weight {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Additional Styles for DeliveryBoy Component */
+  .d-nav-tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .d-nav-tabs button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .d-nav-tabs button:hover {
+    background-color: #0056b3;
+  }
+  
+  .d-nav-tabs button.active {
+    background-color: #0056b3;
+  }
+  
+  .d-active-orders,
+  .d-order-history {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .d-otp-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .d-otp-modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 80%;
+    text-align: center;
+  }
+  
+  .d-otp-modal-content input {
+    width: calc(100% - 40px);
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .d-otp-modal-content button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .d-otp-modal-content button:hover {
+    background-color: #0056b3;
+  }
+  
+  .d-otp-modal-content .error-message {
+    color: #ff6347;
+    margin-top: 10px;
+  }
+  
+  .d-no-orders {
+    text-align: center;
+    color: #777;
+    font-size: 18px;
+  }
+  
+  .d-order-history-container {
+    padding: 5px;
+  }
+  
+  .d-order-history-section {
+    margin: 0 auto;
+    max-width: 1200px; /* Set a max-width for the section */
+  }
+  
+  .d-order-history-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .d-order-history-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjusts based on screen size */
+    gap: 15px; /* Space between grid items */
+    grid-auto-flow: column;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    padding: 10px;
+  }
+  
+  .d-order-history-item {
+   
+    background-color: #f9f9f9; 
+    border: 1px solid #ccc; 
+    border-radius: 8px; 
+    padding: 20px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    flex-shrink: 0; 
+    min-width: 300px; 
+  }
+  
+  .d-order-history-item {
+    display: flex;
+    flex-direction: column; /* Aligns order details vertically */
+  }
+  
+  .d-order-id {
+    font-weight: 500;
+    text-align: center;
+    height: 50px;
+  }
+  
+  .customer-info,
+  .location-info {
+    margin-top: 10px; /* Space above customer and location info */
+  }
+  
+  .d-no-orders {
+    text-align: center;
+    color: #888; /* No orders text color */
+    margin-top: 20px;
+  }
+  
+  
+  .d-button-conatiner{
+   
+      display: flex;
+      justify-content: center;
+      margin: 20px 0; /* Add some margin for spacing */
+    
+  }
+  .d-toggle-history-button {
+    background-color: #007bff; /* Primary color */
+    color: white; 
+    border: none; 
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 10px; /* Padding */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+  }
+  
+  .d-toggle-history-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  
+  .d-order-actions {
+    display: flex; /* Flexbox for alignment */
+    margin-top: 20px;
+    justify-content: center;
+    gap: 10px; /* Space between buttons */
+  }
+
+  
+  .d-action-button {
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding */
+    margin-bottom: 10px;
+    font-size: 14px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+  }
+
+ 
+  .d-location-info strong,  .d-customer-info strong{
+    font-size: 13px;
+  }
+  .d-location-info span, .d-customer-info span{
+    font-size: 80%;
+  }
+
+  .d-location{
+  
+      max-width: 300px; /* Set a max width as per your layout */
+      white-space: wrap; /* Prevent text from wrapping to the next line */
+      overflow: hidden; /* Hide overflowed text */
+      text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+    
+  }
+  .more {
+    color: blue; /* Style the "more" link */
+    cursor: pointer; /* Change cursor to pointer */
+    text-decoration: underline; /* Optional: underline the "more" text */
+  }
+  
+  .d-action-button:hover {
+    transform: translateY(-2px); /* Slight lift effect on hover */
+  
+  }
+  
+  .pickup {
+    background-color: #28a745; /* Green color for 'Picked Up' */
+    color: white; /* Text color */
+  }
+  
+  .delivered {
+    background-color: #ffc107; /* Yellow color for 'Delivered' */
+    color: black; /* Text color */
+  }
+  
+  .pickup:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+  
+  .delivered:hover {
+    background-color: #e0a800; /* Darker yellow on hover */
+  }
+  

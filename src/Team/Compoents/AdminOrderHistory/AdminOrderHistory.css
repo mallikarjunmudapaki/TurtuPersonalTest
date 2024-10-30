@@ -1,0 +1,90 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9; /* Light background for contrast */
+}
+
+/* Modal Style Wrapper */
+.order-history-modal {
+    max-width: 100%; /* Max width for the modal */
+    margin: 50px auto; /* Centering */
+    padding: 20px; /* Padding around content */
+    background-color: #fff; /* White background for modal */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Title Style */
+.order-history-modal h2 {
+    text-align: center; /* Centered title */
+    color: #333; /* Dark text for visibility */
+    margin-bottom: 20px; /* Space below title */
+}
+
+/* Close Button */
+.close-button-a {
+    display: block; /* Full width */
+    margin: 10px 95%; /* Centering and margin */
+    padding: 10px 20px; /* Button padding */
+    background-color: #ffffff; /* Primary color */
+    color: black; /* Text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.close-button-a:hover {
+    /* background-color: #909192be;  */
+    color: rgb(124, 198, 122);
+}
+
+/* Table Styles */
+table {
+    width: 100%; /* Full width */
+    border-collapse: collapse; /* No space between borders */
+    margin-top: 20px; /* Space above table */
+}
+
+.table-header {
+    background-color: #007bff; /* Primary color for header */
+    color: white; /* White text */
+}
+
+.header-row {
+    text-align: left; /* Left align text */
+}
+
+.header-cell {
+    padding: 12px; /* Padding for header cells */
+}
+
+/* Data Rows */
+.data-row {
+    background-color: #fff; /* White background for rows */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.data-row:hover {
+    background-color: #f1f1f1; /* Light gray on hover */
+}
+
+.data-cell {
+    padding: 12px; /* Padding for data cells */
+    border-bottom: 1px solid #ddd; /* Bottom border for separation */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .order-history-modal {
+        padding: 15px; /* Less padding on small screens */
+    }
+
+    .close-button-a {
+        width: 100%; /* Full width for buttons */
+    }
+
+    .data-cell {
+        padding: 10px; /* Less padding for small screens */
+    }
+}

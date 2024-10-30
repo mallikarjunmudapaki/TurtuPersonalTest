@@ -1,0 +1,246 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .A-switchbtn {
+    display: flex;
+    justify-content: center; /* Center align the buttons */
+    /* gap: 10px;  */
+    margin-top: 50px;
+    width: 100%;
+    margin-bottom: 20px; /* Add space below the button container */
+  }
+  
+  .orderswitchbtn1 {
+    background-color: #007bff; /* Blue color for the first button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    /* border-radius: 5px; */
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  border-right:1px solid black ;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .orderswitchbtn2{
+    background-color: #007bff; /* Blue color for the first button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    /* border-radius: 5px; */
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  .active{
+    background-color: #26568b; 
+  }
+  
+  
+  
+  
+  
+  .orderswitchbtn:hover {
+    opacity: 0.8; /* Slightly decrease opacity on hover */
+  }
+  
+  .orderswitchbtn.active {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for the active state */
+  }
+  
+  .assignbtn{
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.3s ease;
+  }
+  .assignbtn:hover {
+    background-color: #218838;
+  }
+  
+  .assignbtn:active {
+    background-color: #1e7e34;
+  }
+  
+  
+  .OrderHistorybtn{
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.3s ease;
+  
+  }
+  .OrderHistorybtn-container{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+  }
+  
+  .loading-overlay {
+    position: fixed; /* Position it relative to the viewport */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    right: 0; /* Stretch to the right */
+    bottom: 0; /* Stretch to the bottom */
+    background-color: rgb(255, 255, 255); /* Semi-transparent background */
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 9999; /* Ensure it is on top of all other elements */
+    font-size: 24px; /* Font size */
+    color: #333; /* Text color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional shadow for depth */
+  }
+  
+  .loading-video {
+    width: 200px; /* Set the width of the video */
+    height: auto; /* Keep aspect ratio */
+    border: none; /* Remove border if any */
+    background-color: transparent; /* Ensure the video background is transparent */
+  }
+  
+  h1 {
+    font-size: 28px;
+    color: #343a40;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+    margin: 0 auto;
+    max-width: 90%;
+    padding: 10 10px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  thead {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  th {
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  td {
+    font-size: 13px;
+    color: #495057;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+  }
+  
+  tbody tr:hover {
+    background-color: #e2e6ea;
+  }
+  
+  select {
+    padding: 6px;
+    font-size: 14px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #495057;
+    cursor: pointer;
+    width: 80%;
+  }
+  
+  
+  
+  
+  
+  .alert {
+    color: #dc3545;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .loading,
+  .error {
+    text-align: center;
+    font-size: 18px;
+    color: #6c757d;
+  }
+  
+  .loading {
+    margin-top: 50px;
+  }
+  
+  .error {
+    margin-top: 20px;
+  }
+  
+  /* Filter Component Styles */
+  .filtercomponent-assigner {
+    margin-bottom: 20px; /* Space between filter component and tables */
+    margin-right: 100px;
+    display: flex;
+    justify-content: flex-end; /* Align filter component to the start */
+  }
+  
+  .filter-component {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adds space between the input and button */
+    margin-bottom: 10px; /* Space below the filter component */
+  }
+  
+  .filter-component input {
+    padding: 5px 10px; /* Smaller padding for a smaller input */
+    border: 1px solid #ced4da; /* Matches with select and button */
+    border-radius: 4px;
+    font-size: 14px; /* Slightly smaller font size */
+    width: 150px; /* Smaller width for a more compact input */
+  }
+  
+  .filter-component .filterbtn {
+    padding: 5px 10px; /* Smaller padding for a smaller button */
+    background-color: rgb(51, 172, 51); /* Use primary color for consistency */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px; /* Slightly smaller font size */
+    transition: background-color 0.3s ease;
+  }
+  
+  .filter-component .filterbtn:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+  }
+  

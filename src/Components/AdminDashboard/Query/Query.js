@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Query.css';
 
-export default function AdminDashboard() {
+export default function UserQuery() {
   const [activeTab, setActiveTab] = useState('contact');
   const [contactData, setContactData] = useState([]);
   const [careerData, setCareerData] = useState([]); 
@@ -15,7 +15,7 @@ export default function AdminDashboard() {
     setLoading(true);
     setError('');
     try {
-      const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/user/contact-queries`);
+      const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/user/web/contact-queries`);
       const sortedContacts = response.data.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
       setContactData(sortedContacts);
       setLoading(false);
@@ -29,7 +29,7 @@ export default function AdminDashboard() {
     setLoading(true);
     setError('');
     try {
-      const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/user/career-applications`);
+      const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/user/web/career-applications`);
       const sortedApplications = response.data.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
       setCareerData(sortedApplications);
       setLoading(false);
@@ -58,7 +58,7 @@ export default function AdminDashboard() {
 
 
   const viewResume = (applicationId) => {
-    const url = `${process.env.REACT_APP_API_BASE_URL}/api/user/career-applications/${applicationId}/resume`;
+    const url = `${process.env.REACT_APP_API_BASE_URL}/api/user/web/career-applications/${applicationId}/resume`;
     window.open(url, '_blank'); 
   };
 

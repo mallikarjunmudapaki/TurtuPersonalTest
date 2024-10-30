@@ -4,6 +4,7 @@ import DeliveryImage from '../../Images/Delivery_carousel.png';
 import GiftDeliveryImg from '../../Images/Delivery_carousel2.png';
 import AnythingAnywhereImg from '../../Images/Anything_Anywhere.png';
 import CakeDeliveryImg from '../../Images/CakeDelivery.png';
+import { Loop } from 'three/webgpu';
 
 const Carousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -72,17 +73,18 @@ const Carousel = () => {
         <h2>{carouselItems[activeIndex].heading}</h2>
         <p>{carouselItems[activeIndex].text}</p>
         <div className="buttons">
-          <button className="carousel-btn" onClick={handleCallClick}>{carouselItems[activeIndex].btn1}</button>
-          <button className="carousel-btn" onClick={handleWhatsAppClick}>{carouselItems[activeIndex].btn2}</button>
+          {/* <button className="carousel-btn" onClick={handleCallClick}>{carouselItems[activeIndex].btn1}</button>
+          <button className="carousel-btn" onClick={handleWhatsAppClick}>{carouselItems[activeIndex].btn2}</button> */}
+          
         </div>
       </div>
       <div className="carousel-image">
         <img src={carouselItems[activeIndex].image} alt="Delivery Illustration" />
       </div>
-      {/*<div className="carousel-controls">
-        <button onClick={handlePrev} className="prev-btn">‹</button>
-        <button onClick={handleNext} className="next-btn">›</button>
-      </div>*/}
+      <div className="carousel-controls">
+        {/* <button onClick={handlePrev} className="prev-btn">‹</button>
+        <button onClick={handleNext} className="next-btn">›</button> */}
+      </div>
     </div>
     </section>
   );

@@ -1,0 +1,115 @@
+
+/* body{
+    background-color: #565555;
+} */
+.oM-PnD-container {
+    text-align: center;
+    height: 100%;
+    padding: 20px;
+    background-color: #ffffff;
+}
+.oM-Container-header{
+    color: rgb(0, 0, 0);
+}
+
+.oM-WarningMess {
+    font-size: 15px;
+    text-align: center;
+    color: red;
+    animation: blink 2s infinite;
+}
+.oM-Container-header {
+    font-size: 2rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 40px;
+}
+
+.oM-order-prompt {
+    font-size: 1.5rem;
+    color: #000000; /* Red color for visibility */
+    margin-bottom: 20px;
+}
+
+.oM-order-type {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 20px; /* Reduced gap for mobile view */
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+/* Adjust order-card for better mobile display */
+.oM-order-card {
+    cursor: pointer;
+    background-color: rgb(182, 231, 248);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px; /* Default width */
+    height: 200px;
+    text-align: center;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.oM-order-card:hover {
+    background-color: rgb(132, 187, 205);
+}
+
+.oM-order-card.selected {
+    background-color: rgb(132, 187, 205); /* Change color when selected */
+}
+
+.oM-order-icon {
+    font-size: 1.5rem;
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.oM-order-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.oM-order-card p {
+    font-size: 0.8rem;
+    color: #555;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 400px) {
+    .oM-Container-header {
+        font-size: 1.5rem;
+    }
+
+    .oM-order-type {
+        flex-direction: row; /* Ensure items are in a row on mobile */
+        gap: 10px; /* Adjust gap for mobile view */
+    }
+
+    .oM-order-card {
+        width: 100%; /* Full width for mobile */
+        height: auto; /* Adjust height */
+        max-width: 120px; /* Limit max width to ensure cards are smaller */
+        padding: 15px; /* Reduce padding */
+    }
+
+    .oM-order-icon {
+        font-size: 1rem; /* Adjust icon size */
+    }
+
+    .oM-order-card h3 {
+        font-size: 1rem; /* Adjust header size */
+    }
+    .oM-order-card p{
+     font-size: 0.5rem;
+    }
+}

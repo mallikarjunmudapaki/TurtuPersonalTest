@@ -1,0 +1,87 @@
+/* Style the main container */
+
+.oM-ConfirmOrder{
+    background-color: rgb(168, 165, 165);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.oM-container {
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+  }
+  
+  /* Heading style */
+  .oM-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Detail boxes styling */
+  .oM-detailBox, .oM-totalBox {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .oM-totalBox {
+    border-bottom: none;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  /* Labels and values */
+  .oM-label, .oM-value, .oM-totalLabel, .oM-totalValue {
+    font-size: 16px;
+  }
+  
+  .oM-totalLabel, .oM-totalValue {
+    font-size: 18px;
+    color: #3cb1e7; /* Red color for total cost */
+  }
+  
+  /* Pay Now button styling */
+  .oM-payNowButton {
+    background-color: #27ae60; /* Green background */
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+  }
+  
+  .oM-payNowButton:hover {
+    background-color: #219150; /* Darker green on hover */
+  }
+  
+  /* Responsive design */
+  @media (max-width: 500px) {
+    .oM-container {
+      padding: 15px;
+    }
+  
+    .oM-heading {
+      font-size: 20px;
+    }
+  
+    .oM-label, .oM-value, .oM-totalLabel, .oM-totalValue {
+      font-size: 14px;
+    }
+  
+    .oM-payNowButton {
+      font-size: 16px;
+      padding: 10px 15px;
+    }
+  }

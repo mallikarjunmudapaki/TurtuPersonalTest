@@ -1,0 +1,122 @@
+.service-card {
+    width: 280px;
+    height: 200px;
+    background-color: #f8f9fa; /* Change this to your preferred card color */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .service-header-text {
+    font-size: 20px;
+    font-weight: 700;
+    margin-left: 15px;
+  }
+  
+  .service-lower-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .service-navigate-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    border-radius: 50%; /* Makes the button round */
+    padding: 15px; /* Adds some padding around the icon */
+    width: 50px; /* Width of the button */
+    height: 50px; /* Height of the button */
+    display: flex; /* Center the icon */
+    justify-content: center; /* Center the icon */
+    align-items: center; /* Center the icon */
+    transition: transform 0.3s; /* Smooth transition for scaling */
+  }
+  
+  .navigateIcon {
+    color: #242527; /* Color of the icon */
+    font-size: 40px; /* Size of the icon */
+    transition: transform 0.3s; /* Smooth transition for scaling */
+  }
+  
+  /* Scale the icon on hover */
+  .service-navigate-btn:hover .navigateIcon {
+    transform: scale(1.2); /* Slightly increase the size of the icon */
+  }
+  
+  .popup-menu {
+    position: absolute;
+    top: 110px; /* Adjust this value to position the popup menu correctly */
+    right: 180px; /* Adjust this value to position the popup menu correctly */
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    z-index: 10;
+  }
+  
+  .s-popupbtn-whatsapp,
+  .s-popupbtn-call {
+    display: flex;
+  
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-align: center;
+  }
+  .s-popupbtn-call {
+    background-color: rgb(87, 201, 224);
+  }
+  .s-popupbtn-whatsapp {
+    background-color: rgb(46, 225, 58);
+  }
+  .service-image {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .service-image .Service-img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: cover;
+  }
+  
+  @media (max-width: 650px) {
+    .service-card {
+      height: 100px;
+      width: 150px;
+    }
+  
+    .service-header-text {
+      font-size: 12px;
+      margin-left: 8px;
+    }
+  
+    .navigateIcon {
+      font-size: 25px;
+    }
+    .s-popupbtn-whatsapp,
+    .s-popupbtn-call {
+      width: 30px;
+      height: 30px;
+      padding: 10px;
+    }
+  
+    .popup-menu {
+      top: 35px; 
+      right: 70px;
+    }
+  }
+  

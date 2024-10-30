@@ -1,0 +1,157 @@
+.dashboard {
+    display: flex;
+    padding: 20px;
+    background-color: #f4f4f9;
+    gap: 20px;
+    flex-direction: column;
+  }
+  
+  .stats-chart-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Wrap elements on smaller screens */
+  }
+  
+  .stats-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 300px;
+    margin: 0 auto;
+    background-color: #eaf2f8;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .stat-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .stat-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .stat-box h3 {
+    margin: 0;
+    color: #333;
+  }
+  
+  .stat-box p {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin: 10px 0 0;
+  }
+  
+  .chart-container {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+    align-items: center;
+    max-width: 800px; /* Increased width for better chart visibility */
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .toggle-buttons {
+    margin-bottom: 20px;
+  }
+  
+  .toggle-buttons button {
+    margin: 0 10px;
+    padding: 12px 25px;
+    background-color: #343535;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .toggle-buttons button:hover {
+    background-color: #555;
+    transform: scale(1.05);
+  }
+  
+  .table-container {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .table-container h3 {
+    padding: 15px;
+    background-color: #343535;
+    color: white;
+    text-align: center;
+  }
+  
+  .table-container table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table-container th, .table-container td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .table-container th {
+    background-color: #2055dc;
+    color: white;
+    font-weight: 600;
+  }
+  
+  .table-container tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .table-container tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .dashboard {
+      flex-direction: column;
+    }
+  
+    .stats-chart-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .stats-container {
+      max-width: none;
+      width: 100%;
+    }
+  
+    .chart-container {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+  

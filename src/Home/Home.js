@@ -7,6 +7,8 @@ import TestimonialCarousel from "../Components/Testimonials/Testimonials";
 import './Home.css'
 import Footer from "../Components/Footer/Footer";
 import OrderProcess from "../Components/OrderProcess/OrderProcess";
+import OrderServices from "../Components/OrderServices/OrderServices";
+import Clients from "../Components/OurClients/OurClients";
 
 export default function Home() {
     return(
@@ -14,7 +16,8 @@ export default function Home() {
         <Header/>
         <Carousel/>
         <div className="content-wrapper">
-        <About/>
+         <OrderServices/>
+        {/* <About/> */}
         <OrderProcess/>
         <CounterDisplay/>
         <ServiceDisplay/>
@@ -25,6 +28,12 @@ export default function Home() {
         <TestimonialCarousel />
       </div>
       </div>
+      <div className="client-logo-header">
+     <header className="header-clienlogo text-center my-5">
+          <h2>Our partners</h2>
+        </header>
+      <Clients/>
+    </div>
       <Footer/>
 
         </>

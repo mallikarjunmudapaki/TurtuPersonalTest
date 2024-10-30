@@ -1,0 +1,29 @@
+
+
+  .oM-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 8px;
+  }
+  .oM-modal-header h2{
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  .oM-close-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  .oM-modal-body p{
+    font-size: 12px;
+
+  }
+  
+  .oM-modal-body {
+    padding-top: 10px;
+  }
+  

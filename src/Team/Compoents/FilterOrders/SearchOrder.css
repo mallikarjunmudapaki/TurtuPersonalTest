@@ -1,0 +1,31 @@
+.filter-component-searchorder{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px; /* Adds space between the input and button */
+  }
+  
+  .filter-component-searchorder .searchinput {
+    padding: 10px 10px; /* Smaller padding for a smaller input */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 10px;
+    font-size: 14px; /* Slightly smaller font size */
+    width: 200px; /* Fixed width for consistency */
+  }
+  
+  .filter-component-searchorder .Searchbtn {
+    padding: 5px 10px; /* Smaller padding for a smaller button */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    margin-right: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px; /* Slightly smaller font size */
+  }
+  
+  .filter-component-searchorder .Searchbtn:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,0 +1,27 @@
+/* src/components/Navbar.css */
+
+.oM-navbar {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
+    align-content: center;
+    padding: 2px 20px;
+    background-color: #0a0a0a;
+    box-shadow: 0 2px 4px rgba(86, 86, 77, 0.895);
+  }
+  
+  .oM-logo {
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+  }
+  
+  .oM-avatar {
+ 
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
