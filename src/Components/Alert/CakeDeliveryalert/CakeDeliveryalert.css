@@ -1,0 +1,56 @@
+/* CustomAlert.css */
+.custom-alert {
+    position: fixed;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(254, 226, 151, 0.651); /* Similar to Bootstrap warning color */
+    color: #000000; /* Darker text color for readability */
+    padding: 10px 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1050; /* Ensure it's above other elements */
+    width: 100%;
+    max-width: 800px; /* Maximum width for larger screens */
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  .custom-alert-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .custom-alert-link {
+    margin-left: 5px;
+    text-decoration: underline;
+    color: inherit; /* Keep the text color consistent */
+  }
+  
+  .custom-alert-close {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    margin-left: 15px;
+    cursor: pointer;
+    color: inherit; /* Keep the text color consistent */
+  }
+  
+  @media (max-width: 768px) {
+    .custom-alert {
+      width: 90%;
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+  
+    .custom-alert-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .custom-alert-close {
+      align-self: flex-end;
+    }
+  }
+  

@@ -12,11 +12,11 @@ export default function Blogs() {
           <h2>Blogs</h2>
           <hr className="HLine mx-auto" />
         </header>
-            <div className="container">
+            <div className="blog-container">
                 <BlogsDetailsPage />
             </div>
-            <div className="App">  
-      </div>
+            {/* <div className="App">   */}
+      {/* </div> */}
       </div>
 
 

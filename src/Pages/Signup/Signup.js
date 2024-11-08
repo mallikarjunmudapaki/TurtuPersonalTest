@@ -97,36 +97,38 @@ function SignUp() {
     setFormErrors(errors);
     return isValid;
   };
- const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (validate()) {
-      try {
-        const response = await axios.post(
-          `${process.env.REACT_APP_API_BASE_URL}/api/auth/register`, 
-          formData,
-          { headers: { 'Content-Type': 'application/json' } }
-        );
 
-        if (response.data.status === 'success') {
-          setIsOtpSent(true);
-          setSubmissionStatus('OTP has been sent to your email. Please enter it to verify your account.');
-          setIsError(false); 
-        } else {
-          setSubmissionStatus(response.data.message);
-          setIsError(true);
-          
-        }
-      } catch (error) {
-        setSubmissionStatus('Failed to submit the form. Please try again.');
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  if (validate()) {
+    try {
+      console.log('Form Data:', formData);
+      const response = await axios.post(
+        `${process.env.REACT_APP_API_BASE_URL}/api/auth/web/register`, 
+        formData,
+        { headers: { 'Content-Type': 'application/json' } }
+      );
+
+      if (response.data.status === 'success') {
+        setIsOtpSent(true);
+        setSubmissionStatus('OTP has been sent to your email. Please enter it to verify your account.');
+        setIsError(false); 
+      } else {
+        setSubmissionStatus(response.data.message);
         setIsError(true);
       }
+    } catch (error) {
+      console.error('Error submitting form:', error.response ? error.response.data : error.message);
+      setSubmissionStatus('Failed to submit the form. Please try again.');
+      setIsError(true);
     }
-  };
+  }
+};
   const handleOtpSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_BASE_URL}/api/auth/verify-otp`, 
+        `${process.env.REACT_APP_API_BASE_URL}/api/auth/web/verify-otp`, 
         JSON.stringify({
           email: formData.email,
           otp: otp  
@@ -155,7 +157,7 @@ function SignUp() {
 
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_BASE_URL}/api/auth/resend-otp`, 
+        `${process.env.REACT_APP_API_BASE_URL}/api/auth/web/resend-otp`, 
         JSON.stringify({
           email: formData.email,
         }), 

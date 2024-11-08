@@ -1,15 +1,13 @@
-import Counter from './Counter.js';
-import { CounterData } from './CounterData.js';
-import './Counter.css';
+//CounterDisplay.js
+import React from 'react';
+import CounterRow from './CounterData.js';
 
-export default function CounterDisplay(){
-    return(
-        <>
-        <div className="counter-display container">
-        {CounterData.map((counter, index) => (
-          <Counter key={index} count={counter.count} title={counter.title} />
-        ))}
-      </div>
-        </>
-    )
+function CounterDisplay() {
+  return (
+    <div className="App">
+      <CounterRow />
+    </div>
+  );
 }
+
+export default CounterDisplay;

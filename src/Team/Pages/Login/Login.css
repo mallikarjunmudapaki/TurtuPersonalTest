@@ -47,6 +47,7 @@
     font-size: 14px;
     font-weight: 500;
 }
+
 .back-button {
     display: flex;
     align-items: center;
@@ -83,7 +84,7 @@
 .oM-ptagtextlogin {
     font-size: 14px;
     text-align: center;
-    color: #000;
+    color: #c7cc2f;
     z-index: 1;
     padding: 20px;
 }

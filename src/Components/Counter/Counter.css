@@ -1,52 +1,47 @@
-.counter-section {
-    width: 25%;
-    height: 20vh;
-    margin-top: 0px;
+.counter-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.counter {
+  font-size: 2em;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.counter-value {
+  font-size: 0.8em;
+  color: #262926;
+  margin-bottom: 8px;
+}
+
+.counter-title {
+  font-size: 0.5em;
+  color: #555;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .counter-row {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media (max-width: 480px) {
+  .counter-row {
+    grid-template-columns:repeat(2, 1fr); 
+  }
+  .counter {
+    font-size: 1.5em;
   }
 
-  .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .cards {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    text-align: center;
-    background-color: white;
-    color: black;
-    width: 100%;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Add smooth transition */
-  }
-  .cards:hover {
-    transform: scale(1.1); 
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
-    animation: bounce 0.6s ease-in-out; 
-  }
- 
-  @keyframes bounce {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-5px); 
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .counter-section {
-      width: 100%;
-      padding: 20px !important;
-      gap: 0;
-    }
-    .counter-display{
-      display: flex;
-      flex-direction: column;
-    }
-  }
-  
+}

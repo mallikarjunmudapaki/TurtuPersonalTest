@@ -87,7 +87,7 @@
 
 .signup-error {
   color: red;
-  font-size: 0.75rem; 
+  font-size: 0.55rem; 
   margin-top: 3px;
   text-align: start;
 }
@@ -240,6 +240,8 @@
 .error-text {
   color: red;
   margin-top: 8px;
+  font-size: 13px;
+  text-align: center;
 }
 
 .success-text {

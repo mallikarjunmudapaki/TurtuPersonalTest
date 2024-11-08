@@ -1,90 +1,107 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-  }
-  
-  .about-us {
-    padding: 50px 0;
-  }
-  
+.about-us {
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+.about-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.about-heading h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #0f0f0f;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+}
+
+.about-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-card {
+  position: relative; /* Set position relative for pseudo-element */
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Hide overflow for the pseudo-element */
+}
+
+.about-card::before {
+  content: ''; /* Create a pseudo-element */
+  position: absolute; /* Position it absolutely */
+  bottom: 100%; /* Start below the card */
+  left: 0;
+  right: 0;
+  height: 100%; /* Full height */
+  background: rgba(0, 123, 255, 0.3); /* Background color for the fill */
+  transition: bottom 0.3s ease; /* Animate the bottom position */
+  z-index: 0; /* Place it behind the card content */
+}
+
+.about-card h4 {
+  font-size: 1.5rem;
+  color: #090909;
+  position: relative; /* Position relative to ensure it’s above the pseudo-element */
+  z-index: 1; /* Place content above the pseudo-element */
+}
+
+.about-card span {
+  font-weight: bold;
+}
+
+.about-card p {
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.about-card:hover::before {
+  bottom: 0; /* Animate the fill upwards */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .about-row {
-    display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     align-items: center;
-    gap: 20px;
   }
-  .about-heading{
-    text-align: center;
-    padding-bottom: 40px;
-  }
+
   .about-image {
-    flex: 1;
-    max-width: 50%;
+    margin-bottom: 20px;
   }
-  
-  .about-image img {
-    width: 100%;
-    max-width: 80%;
-    height: auto;
-    border-radius: 10px;
-  }
-  
-  .about-content {
-    flex: 1;
-    max-width: 50%;
-  }
-  
-  .about-content h4 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .about-content p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #555;
-  }
-  
-  @media (max-width: 768px) {
-    .about-row {
-      flex-direction: column;
-      text-align: center;
-    }
-    .about-heading{
-      text-align: center;
-     
-    }
-    .about-image {
-      max-width: 100%;
-    }
-  
-    .about-content {
-      max-width: 100%;
-    }
-  
-    .about-content h2 {
-      font-size: 2rem;
-    }
-  
-    .about-content p {
-      font-size: 0.95rem;
-    }
-    
-  }
-  @media (max-width: 480px) {
-    .about-us {
-      padding: 10px 0;
-    }
-  }  
-  
+}

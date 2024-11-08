@@ -4,6 +4,7 @@ import './AssignerDashboard.css';
 import Navbar from '../../../Team/Compoents/Navbar/Navbar';
 import FilterComponent from '../../../Team/Compoents/FilterOrders/SearchOrder';
 const AssignedDashboard = () => {
+  
 
   const [orders, setOrders] = useState([]);
   const [drivers, setDrivers] = useState([]);
@@ -390,16 +391,16 @@ const AssignedDashboard = () => {
                   <th>ID</th>
                   <th>Phone Number</th>
                   <th>Name</th>
-                  <th>Email</th>
+                  {/* <th>Email</th> */}
                   <th>Pickup Address</th>
                   <th>Drop Address</th>
-                  <th>Receiver Phonenumber</th>
+                  {/* <th>Receiver Phonenumber</th> */}
                   <th>Content</th>
                   <th>Weight</th>
                   <th>Pickup Date</th>
                   <th>Pickup Time</th>
                   {/* <th>Drop Time </th> */}
-                  {/* <th>Created At</th> */}
+                  <th>Created At</th>
                   <th>Status</th>
                   <th>Assigned Driver</th>
                 </tr>
@@ -415,16 +416,16 @@ const AssignedDashboard = () => {
                       <td>{order.order_id}</td>
                       <td>{order.phoneNumber}</td>
                       <td>{order.name}</td>
-                      <td>{order.email}</td>
+                      {/* <td>{order.email}</td> */}
                       <td>{order.pickupAddress}</td>
                       <td>{order.dropAddress}</td>
-                      <td>{order.receiverPhonenumber}</td>
+                      {/* <td>{order.receiverPhonenumber}</td> */}
                       <td>{order.content}</td>
                       <td>{order.weight} {"Kg"}</td>
                       <td>{ order.pickupDate?new Date(order.pickupDate).toISOString().split('T')[0]:"NULL"}</td>
                       <td>{order.pickupTime? order.pickupTime:"NULL"}</td>
                       {/* <td>{order.dropTime}min</td> */}
-                      {/* <td>{new Date(order.createdAt).toLocaleString()}</td> */}
+                      <td>{new Date(order.createdAt).toLocaleString()}</td>
                       <td>{order.status}</td>
                       <td>{order.assignedDriver || order.driver_name || 'Not Assigned'}</td>
                     </tr>

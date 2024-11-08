@@ -106,8 +106,24 @@ export const OrderProvider = ({ children }) => {
       localStorage.setItem('tokenExpiry', expiryTime);
 
     } catch (error) {
-      setError("Login failed");
+      // console.log(error);
+      if (error.response) {
+        if (error.response.status === 403) {
+          setError(  'Email not verified. Please check your email.');
+        } else if (error.response.status === 401) {
+          setError(  'Invalid email or password. Please try again.' );
+        } else {
+          setError( 'An unexpected error occurred. Please try again.' );
+        }
+      } else {
+        // setError(  'Error connecting to the server. Please try again later.' );
+           navigate('/404');
+      }
+      
+      // setError("Login failed");
       setSuccess("");
+      // navigate('/404');
+      
     }
 
     

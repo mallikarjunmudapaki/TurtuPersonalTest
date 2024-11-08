@@ -23,11 +23,13 @@ const Footer = () => {
                     <h4>Company</h4>
                     <ul>
                         <li><a href="#home" className="text-black">Home</a></li>
-                        <li><a href="#about" className="text-black">About</a></li>
+                        <li><a href="about" className="text-black">About us</a></li>
                         <li><a href="#services" className="text-black">Services</a></li>
                         <li><a href="/career" className="text-black">Career</a></li>
                         <li><a href="/blogs" className="text-black">Blogs</a></li>
                         <li><a href="/Contact" className="text-black">Contact</a></li>
+                        <li><a href="/team-Login" className="text-black">Work With Us</a></li>
+                   
                     </ul>
                 </div>
 

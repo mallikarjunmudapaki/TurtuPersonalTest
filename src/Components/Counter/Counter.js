@@ -1,23 +1,32 @@
-import Aos from 'aos';
-import 'aos/dist/aos.css';
-import { useEffect } from 'react';
-import '../Counter/Counter.css';
-export default function Counter({ count, title }) {
-    useEffect(()=>{
-        Aos.init({duration:'1000'})
-      })
-    
-    return (
+// Counter.js
+import React, { useState, useEffect } from 'react';
 
-        <section className="counter-section pb-5 pt-5">
-            <div className='counter'>
-                <div className="cards">
-                    <h3>{count}</h3>
-                    <p>{title}</p>
-                </div>
-            </div>
+const Counter = ({ targetNumber, title, duration = 2000 }) => {
+  const [count, setCount] = useState(0);
 
-        </section>
+  useEffect(() => {
+    const increment = targetNumber / (duration / 50);
 
-    );
-}
+    const counter = setInterval(() => {
+      setCount((prevCount) => {
+        const nextCount = prevCount + increment;
+        if (nextCount >= targetNumber) {
+          clearInterval(counter);
+          return targetNumber;
+        }
+        return nextCount;
+      });
+    }, 50);
+
+    return () => clearInterval(counter);
+  }, [targetNumber, duration]);
+
+  return (
+    <div className="counter">
+      <div className="counter-value">{Math.round(count)}</div>
+      <div className="counter-title">{title}</div>
+    </div>
+  );
+};
+
+export default Counter;

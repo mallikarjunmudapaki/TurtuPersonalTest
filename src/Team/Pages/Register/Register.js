@@ -93,10 +93,11 @@ export const TeamRegister = () => {
  
 
   return (
+    
     <div className="oM-register-page">
        <button className="back-button" onClick={handleBackClick}>
-  <FaArrowLeft /> Back
-</button>
+        <FaArrowLeft /> Back
+      </button>
       <div className="oM-form-container">
         <div className="oM-register-form">
           <h2 className="oM-register-heading">Register</h2>

@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState } from 'react';
 import './OrderForm.css';
 import axios from 'axios';
 import { TextField,Slider } from '@mui/material';
@@ -37,31 +37,37 @@ const OrderForm = () => {
           const [pickupSuggestions, setPickupSuggestions] = useState([]);
           const [dropSuggestions, setDropSuggestions] = useState([]);
           
-          useEffect(() => {
-            const savedPickupCoordinates = JSON.parse(localStorage.getItem('pickupCoordinates')) || {};
-            const savedDropCoordinates = JSON.parse(localStorage.getItem('dropCoordinates')) || {};
-            const savedDistances = JSON.parse(localStorage.getItem('distances')) || {};
-            const savedPickupSuggestions = JSON.parse(localStorage.getItem('pickupSuggestions')) || {};
-            const savedDropSuggestions = JSON.parse(localStorage.getItem('dropSuggestions')) || {};
+          // useEffect(() => {
+          //   const savedPickupCoordinates = JSON.parse(localStorage.getItem('pickupCoordinates')) || {};
+          //   const savedDropCoordinates = JSON.parse(localStorage.getItem('dropCoordinates')) || {};
+          //   const savedDistances = JSON.parse(localStorage.getItem('distances')) || {};
+          //   const savedPickupSuggestions = JSON.parse(localStorage.getItem('pickupSuggestions')) || {};
+          //   const savedDropSuggestions = JSON.parse(localStorage.getItem('dropSuggestions')) || {};
           
-            setCache({
-              pickupCoordinates: savedPickupCoordinates,
-              dropCoordinates: savedDropCoordinates,
-              distances: savedDistances,
-              pickupSuggestions: savedPickupSuggestions,
-              dropSuggestions: savedDropSuggestions,
-            });
-          }, []);
+          //   setCache({
+          //     pickupCoordinates: savedPickupCoordinates,
+          //     dropCoordinates: savedDropCoordinates,
+          //     distances: savedDistances,
+          //     pickupSuggestions: savedPickupSuggestions,
+          //     dropSuggestions: savedDropSuggestions,
+          //   });
+          // }, []);
+
+          // const [cache, setCache] = useState({
+          //   pickupCoordinates: {},
+          //   dropCoordinates: {},
+          //   distances: {},
+          //   pickupSuggestions: {},
+          //   dropSuggestions: {},
+          // });
 
           const [cache, setCache] = useState({
-            pickupCoordinates: {},
-            dropCoordinates: {},
-            distances: {},
-            pickupSuggestions: {},
-            dropSuggestions: {},
+            pickupCoordinates: JSON.parse(localStorage.getItem('pickupCoordinates')) || {},
+            dropCoordinates: JSON.parse(localStorage.getItem('dropCoordinates')) || {},
+            distances: JSON.parse(localStorage.getItem('distances')) || {},
+            pickupSuggestions: JSON.parse(localStorage.getItem('pickupSuggestions')) || {},
+            dropSuggestions: JSON.parse(localStorage.getItem('dropSuggestions')) || {},
           });
-
-
 
           const handlePickupTimeChange = (newValue) => {
             if (newValue) {
@@ -213,17 +219,11 @@ const OrderForm = () => {
   // distance calculation
   const calculateDistance = async () => {
 
-    
-    // if (!pickupAddress || !dropAddress) {
-      
-    //   alert('Please select both pickup and drop addresses');
-    //   return ;
-    // }
+  
     if (!pickupAddress || !dropAddress) {
       return;
     }
 
-    
     const cacheKey = `${pickupAddress}-${dropAddress}`;
     
     // Check cache for previously calculated distance
@@ -232,12 +232,12 @@ const OrderForm = () => {
       // setDistance(cachedDistance); 
       updateOrderData({ distance: cachedDistance });
       
-      return; 
+      return ; 
     }
     
-    setIsLoading(true); // Start loading
     
     try {
+    
       let pickupLocation, dropLocation;
       
       // Fetch pickup coordinates
@@ -245,6 +245,7 @@ const OrderForm = () => {
         pickupLocation = cache.pickupCoordinates[pickupAddress];
         
       } else {
+        // setIsLoading(true); // Start loading
         const pickupResponse = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json`, {
           params: {
             address: pickupAddress,
@@ -254,6 +255,7 @@ const OrderForm = () => {
   
         if (pickupResponse.data.status === 'OK') {
           pickupLocation = pickupResponse.data.results[0].geometry.location;
+          console.log(pickupResponse);
           // Update cache with pickup coordinates
           setCache((prevCache) => {
             const updatedCache = {
@@ -266,8 +268,9 @@ const OrderForm = () => {
             localStorage.setItem('pickupCoordinates', JSON.stringify(updatedCache.pickupCoordinates));
             return updatedCache;
           });
+          // setIsLoading(false); // Start loading
         } else {
-          alert('Geocoding was not successful for the pickup address. Please try again.');
+          alert('Please provide correct Pickup area,landmark as per google Maps');
           return;
         }
       }
@@ -276,6 +279,7 @@ const OrderForm = () => {
       if (cache.dropCoordinates[dropAddress]) {
         dropLocation = cache.dropCoordinates[dropAddress];
       } else {
+        // setIsLoading(true); // Start loading
         const dropResponse = await axios.get(`https://maps.googleapis.com/maps/api/geocode/json`, {
           params: {
             address: dropAddress,
@@ -285,6 +289,9 @@ const OrderForm = () => {
   
         if (dropResponse.data.status === 'OK') {
           dropLocation = dropResponse.data.results[0].geometry.location;
+
+          console.log(dropResponse);
+          
           // Update cache with drop coordinates
           setCache((prevCache) => {
             const updatedCache = {
@@ -297,26 +304,39 @@ const OrderForm = () => {
             localStorage.setItem('dropCoordinates', JSON.stringify(updatedCache.dropCoordinates));
             return updatedCache;
           });
+          // setIsLoading(false); // Start loading
         } else {
-          alert('Geocoding was not successful for the drop address. Please try again.');
+          alert('Please provide correct Drop area ,landmark as per google Maps');
           return;
         }
       }
       
       const origins = `${pickupLocation.lat},${pickupLocation.lng}`;
-      const destinations = `${dropLocation.lat},${dropLocation.lng}`;
+      console.log(origins);
       
+      const destinations = `${dropLocation.lat},${dropLocation.lng}`;
+      console.log(destinations);
+      setIsLoading(true); // Start loading
       // Fetch distance using your server's distance matrix endpoint
       const distanceResponse = await axios.get('http://13.126.174.229:5000/api/user/distance-matrix', {
         params: {
           origins,
           destinations,
-          // key: googleGeocodeKey 13.126.174.229,
         },
       });
+ if(!distanceResponse){
+  console.log("no");
+  
+ }else{
 
-      const distanceValue = distanceResponse.data.rows[0].elements[0].distance.text;
+   console.log(distanceResponse);
+ }
+      
+
+      const distanceValue = distanceResponse.data.distance_value;
+
       console.log(distanceValue);
+
       // setDistance(distanceValue); // Set the calculated distance
       updateOrderData({ distance: distanceValue });
 
@@ -336,24 +356,28 @@ const OrderForm = () => {
       setIsLoading(false); 
     } catch (error) {
      
-      console.error('Error calculating distance:', error);
-      alert('An error occurred while calculating the distance.');
+     console.error('Error calculating distance:', error);
+     // alert('An error occurred while calculating the distance.'); 
       
-    }
+    } 
   };
   
 
   const handleSubmit = async (event) => {
 
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault(); 
     if (!validateForm()) return;
     //  setIsLoading(true)
     const orderDataToSubmit = {
       ...orderData,
       serviceType: isScheduled ? "Schedule for Later" : "Delivery Now",
     };
+    console.log(orderDataToSubmit);
+    
    
     localStorage.setItem('orderDetails', JSON.stringify(orderDataToSubmit));
+
+    console.log(distance);
     
     // setIsLoading(false)
     // Navigate to the confirm order page
@@ -369,7 +393,7 @@ const OrderForm = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          distance: parseFloat(distance.split(' ')[0]),
+          distance: parseFloat(distance),
           weight: contentWeight,
         }),
       });
@@ -386,16 +410,35 @@ const OrderForm = () => {
     // console.log('Order Data:', orderDataToSubmit);
 };
 
+      const senderBackgroundColor = '#f0f8ff'; // Light blue for sender tab
+      const receiverBackgroundColor = '#fdf5ff'; // Light beige for receiver tab
+
+      const formStyle = {
+        backgroundColor: activeTab === 'sender' ? senderBackgroundColor : receiverBackgroundColor,
+        padding: '20px',
+        borderRadius: '5px',
+      };
+
+      const currentDate = new Date();
+      const maxDate = new Date();
+      maxDate.setDate(currentDate.getDate() + 3);
+
   return (
 
     <>
     {isLoading && (
-        <div className="oM-spinner-overlay">
-          <span className="oM-spinner"></span>
+        // <div className="oM-spinner-overlay">
+        //   <span className="oM-spinner"></span>
+        // </div>
+        <div className="loading-overlay">
+        <video className="loading-video" autoPlay loop muted>
+          <source src={require("./../../Team/Resources/Video/loading.mp4")} type="video/mp4" />
+          Your browser does not support the video tag.
+          </video>
         </div>
       )}
       <div className="oM-order-container">
-        <div className="oM-order-form">
+        <div style={formStyle} className="oM-order-form" >
           <h2 className="oM-order-header">{isScheduled?"Schedule for Later":"Delivery Now"}</h2>
           <div className="oM-tab-bar">
             <div
@@ -549,6 +592,8 @@ const OrderForm = () => {
                         value={pickupDate}
                         onChange={(newValue) => updateOrderData({ pickupDate: newValue })}
                         textField={<TextField variant="outlined" fullWidth required />}
+                        minDate={currentDate}
+                        maxDate={maxDate}
                       />
                     </div>
                   </LocalizationProvider>

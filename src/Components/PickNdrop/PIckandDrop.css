@@ -75,6 +75,39 @@
     color: #555;
 }
 
+
+.back-button {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Space between icon and text */
+    background-color: rgb(253, 182, 2); /* Primary color */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 12px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    position: absolute;
+    top: 10px; 
+    left: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .back-button:hover {
+    background-color: rgb(232, 169, 10) ;/* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+  }
+  
+  .back-button:active {
+    background-color: rgb(253, 182, 2); /* Even darker for active state */
+    transform: translateY(0); /* Return to original position */
+  }
+  
+  .back-button svg {
+    font-size: 18px; /* Icon size */
+  }
+
 @keyframes blink {
     0%, 100% {
         opacity: 1;

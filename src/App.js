@@ -26,6 +26,11 @@ import Help from './Team/Compoents/Help/Help.js';
 import AdminProfile from './Team/Compoents/AdminProfile/AdminProfile.js';
 import UserQuery from './Components/AdminDashboard/Query/Query.js';
 import AdminOrderHistory from './Team/Compoents/AdminOrderHistory/AdminOrderHistory.js';
+import NotFoundPage from './Team/Pages/Notfound/NotFound.js';
+import AboutPage from './Pages/AboutPage/AboutPage.js';
+// import NotificationManager from './Components/NotificationManager/NotificationManager.js';
+import CareerForm from './Components/CareerForm/CareerForm.js';
+import CareerWrapper from './Components/CareerForm/careerWraper/Careerwrapper.js';
 
 function App() {
   return (
@@ -35,11 +40,18 @@ function App() {
    <AuthProvider>
     <BrowserRouter>
     <OrderProvider>
+  {/* <NotificationManager/> */}
       <Routes>
         <Route index path="/" element={<Home />} />
         <Route path="/signup" element={<Signup/>}/>
         <Route path='/login' element={<Login/>}/>
-        <Route path='/career' element={<Career/>}/>
+        {/* <Route path='/career' element={<Career/>}/> */}
+        <Route path="/career" element={<CareerWrapper />}>
+          <Route index element={<Career />} />
+          <Route path="career-form" element={<CareerForm />} />
+        </Route>
+
+        <Route path='/about' element={<AboutPage/>}/>
         <Route path='/Contact' element={<ContactPage/>}/>
         <Route path='/forgot-password' element={<ForgotPassword/>}/>
         <Route path='/reset-password/:token' element={<ResetPassword/>}/>
@@ -47,6 +59,7 @@ function App() {
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/blog/:blogTitle" element={<SubBlogsPage />} />
         <Route path="/blog/:blogTitle/:subBlogTitle" element={<BlogDetailArticle />} />
+        <Route path="/404" element={<NotFoundPage/>} />
         
         <Route path="/pick-and-drop" element={<PickandDrop />}/>
         <Route path="/confirm" element={<ConfirmOrder />} />

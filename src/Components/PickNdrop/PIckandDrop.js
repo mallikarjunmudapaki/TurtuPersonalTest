@@ -3,20 +3,35 @@ import { FaClock, FaCalendarAlt } from 'react-icons/fa';
 import './PIckandDrop.css';
 import OrderForm from './../../Components/OrderForm/OrderForm';
 import { useOrderContext } from './../../Context/ContextStore';
+import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
+import CakeDeliveryalert from '../Alert/CakeDeliveryalert/CakeDeliveryalert';
+
 const PickandDrop = () => {
   const { isScheduled, setIsScheduled } = useOrderContext();
   const [orderTypeSelected, setOrderTypeSelected] = useState(false);
-
+  const navigate = useNavigate(); 
   const handleOrderTypeSelect = (scheduled) => {
     setIsScheduled(scheduled);
     setOrderTypeSelected(true);
   };
 
+
+  const handleBackClick = () => {
+    navigate('/');
+  };
+
   return (
     <>
+      <CakeDeliveryalert/>
       <div className="oM-PnD-container">
+
+      <button className="back-button" onClick={handleBackClick}>
+            <FaArrowLeft /> Back
+          </button>
+
         <h1 className="oM-Container-header">Book Your Order For Pick And Drop</h1>
-        <p className='oM-WarningMess' >For Cake Delivery Call us : +91 8747858317 </p>
+        {/* <p className='oM-WarningMess' >For Cake Delivery Call us : +91 8747858317 </p> */}
 
         <div className="oM-order-type">
           <div

@@ -29,7 +29,7 @@
     justify-content: space-around;
     margin-bottom: 20px;
     gap: 10px;
-    background-color: #f1f1f1;
+    background-color: #f1f1f100;
     border-radius: 8px;
 }
 
@@ -157,6 +157,29 @@
 
 .oM-checkbox-label a:hover {
     text-decoration: underline;
+}
+
+.loading-overlay {
+  position: fixed; /* Position it relative to the viewport */
+  top: 0; /* Align to the top */
+  left: 0; /* Align to the left */
+  right: 0; /* Stretch to the right */
+  bottom: 0; /* Stretch to the bottom */
+  background-color: #fff; /* Semi-transparent background */
+  display: flex; /* Use flexbox to center content */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  z-index: 9999; /* Ensure it is on top of all other elements */
+  font-size: 24px; /* Font size */
+  color: #333; /* Text color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional shadow for depth */
+}
+
+.loading-video {
+  width: 200px; 
+  height: auto; 
+  border: none; 
+  background-color: transparent; 
 }
 
 /* Spinner overlay styles */

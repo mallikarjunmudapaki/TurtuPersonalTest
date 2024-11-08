@@ -44,7 +44,7 @@ const Login = () => {
       return;
     }
     try {
-      const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/auth/verify`, {
+      const response = await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/auth/web/verify`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -66,11 +66,12 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/auth/login`, formData, {
+      const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/auth/web/login`, formData, {
         headers: {
           'Content-Type': 'application/json',
         },
       });
+      
 
       if (response.status === 200) {
         const { token } = response.data.data;
@@ -79,7 +80,10 @@ const Login = () => {
         await verifyToken(token);
 
         window.location.href = '/';
+
       }
+    
+  
     } catch (error) {
       if (error.response) {
         if (error.response.status === 403) {

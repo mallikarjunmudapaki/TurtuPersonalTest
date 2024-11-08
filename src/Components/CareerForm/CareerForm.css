@@ -1,0 +1,98 @@
+.career-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #343a40;
+  font-size: 24px;
+ 
+}
+.career-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4;
+  height: 100vh; 
+  padding: 20px;
+}
+
+.career-form {
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px; 
+  margin: 0 auto;
+}
+
+.input-field {
+  margin-top: 15px; 
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #495057;
+  font-size: 14px;
+}
+
+.input-field-element {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out;
+}
+.input-field-element::placeholder{
+  font-size: 14px;
+}
+.input-field-element:focus {
+  border-color: #80bdff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+.error-message {
+  color: #c72030;
+  font-size: 12px; 
+  margin-top: 5px;
+}
+
+.success-message {
+  color: #28a745;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.career-btn {
+  background-color: #02101D;
+  color: #ffffff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  width: 100%;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.career-btn:hover {
+  background-color: #041f38;
+}
+
+@media (max-width: 600px) {
+  .career-form {
+    padding: 25px;
+  }
+
+  .career-heading {
+    font-size: 20px; 
+  }
+
+  .career-btn {
+    font-size: 14px;
+  }
+}

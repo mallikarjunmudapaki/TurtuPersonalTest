@@ -52,7 +52,7 @@ export default function BlogsDetailsPage() {
         <section className="blogs-section pb-5" id="blogs">
             <div className="row mb-5">
                 <div className="blogs">
-                    <div className="container">
+                    <div className="blog-container">
                         {blogData.map((blog, index) => (
                             <div className="col mt-2" key={index}>
                                 <Link to={`/blog/${blog.path}`}>

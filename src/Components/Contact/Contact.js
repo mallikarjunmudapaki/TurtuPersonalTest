@@ -31,7 +31,7 @@ export default function Contact() {
       try {
         await axios.post(
           
-          `${process.env.REACT_APP_API_BASE_URL}/api/user/contact`, 
+          `${process.env.REACT_APP_API_BASE_URL}/api/user/web/contact`, 
           formValues,
           {
             headers: {

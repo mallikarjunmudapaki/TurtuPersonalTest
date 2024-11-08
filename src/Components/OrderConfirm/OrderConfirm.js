@@ -1,12 +1,13 @@
 
 
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import './OrderConfirm.css';
 import { useNavigate ,useLocation} from 'react-router-dom';
 import PaymentStatusModal from './../../Components/Modal/PaymentConfirmModal/PaymentConfirmModal';
 import { useOrderContext } from './../../Context/ContextStore';
 import InfoModal from './../../Components/Modal/SummeryModal/CostSummary';
 import { FaInfoCircle } from 'react-icons/fa'; 
+import { FaArrowLeft } from "react-icons/fa";
 
 const ConfirmOrder = () => {
  
@@ -16,6 +17,14 @@ const ConfirmOrder = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [paymentSuccess, setPaymentSuccess] = useState(false);
+  const [token, setToken] = useState(null);
+
+
+  useEffect(() => {
+    // Check if token exists in local storage
+    const storedToken = localStorage.getItem('authToken');
+    setToken(storedToken);
+}, []);
 
   const { orderData,updateOrderData ,isScheduled} = useOrderContext();
   const pricingInfo = {
@@ -65,7 +74,7 @@ const ConfirmOrder = () => {
       const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/data/create-razorpay-order`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ amount: amountInPaise, currency: "INR" }),
+        body: JSON.stringify({ amount: amountInPaise, currency: "INR"}),
       }).catch(error => {
         console.error('Fetch error:', error);
         throw new Error('Failed to fetch');
@@ -102,9 +111,13 @@ const ConfirmOrder = () => {
           try {
             const paymentResponse = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/data/usersubmit`, {
               method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
+              headers: {
+                 'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`, 
+                },
               body: JSON.stringify({
                 ...orderDetails,
+             
                 razorpay_payment_id: response.razorpay_payment_id,
                 razorpay_order_id: response.razorpay_order_id,
                 razorpay_signature: response.razorpay_signature,
@@ -185,10 +198,17 @@ const ConfirmOrder = () => {
     navigate('/', { replace: true });
   };
 
+  const handleBackClick = () => {
+    navigate(-1);
+  };
 
 
   return (
 <div className='oM-ConfirmOrder'>
+<button className="back-button" onClick={handleBackClick}>
+            <FaArrowLeft /> Back
+          </button>
+
         <div className="oM-container">
           <h1 className="oM-heading">Confirm Your Order</h1>
           <div className="oM-detailBox">
@@ -219,7 +239,13 @@ const ConfirmOrder = () => {
            
             </span>
           </div>
-          <button onClick={submitOrder} className="oM-payNowButton">Pay Now</button>
+            <button 
+              onClick={submitOrder} 
+              className="oM-payNowButton"
+              disabled={!token}
+            >
+            {token ? 'Pay Now' : 'Sign Up / Pay Now'}
+            </button>
           < InfoModal isOpen={isModalOpen} onClose={toggleModal} pricingInfo={pricingInfo} />
           <PaymentStatusModal
             isOpen={modalVisible}
